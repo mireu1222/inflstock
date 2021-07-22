@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            <div class="member-wrap">
+                <h2 class="title logo">SNS 계정으로 간편하게 회원가입하세요.</h2>
+                <ul class="button-lists">
+                    <li><a href="" class="btn01"><span>네이버 간편 가입하기</span></a></li>
+                    <li><a href="" class="btn02"><span>카카오톡 간편 가입하기</span></a></li>
+                    <li><a href="/page/join-form.html" class="btn03"><span>본인인증 회원가입</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+        
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+</body>
+</html>

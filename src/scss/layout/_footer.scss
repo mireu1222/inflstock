@@ -1,0 +1,195 @@
+/* footer */
+footer {
+    padding:70px 0;
+    background:#fff;
+    @include tablet {
+        padding:50px 0;
+    }
+    @include mobile {
+        padding:30px 0;
+    }
+    .foot-area {
+        display:flex;
+        @include contArea;
+        @include tablet {
+            display:block;
+        }
+        .left {
+            min-width:181px;
+            width:181px;
+            margin-right:50px;
+            @include tablet {
+                width:100%;
+                min-width:none;
+                margin-right:0;
+            }
+            @include mobile {
+                p.logo {
+                    img {
+                        height:30px;
+                    }
+                }
+            }
+            ul.links {
+                margin-top:20px;
+                font-size:0;
+                li {
+                    display:inline-block;
+                    vertical-align:top;
+                    margin-left:5px;
+                    &:first-child {
+                        margin-left:0;
+                    }
+                    a {
+                        display:block;
+                        width:30px;
+                        height:30px;
+                        background-size:100%;
+                        background-repeat:no-repeat;
+                        background-position:center;
+                        opacity:0.6;
+                        @for $i from 1 through 4 {
+                            &.sns0#{$i} {
+                                background-image:url('/images/icon/icon-sns0#{$i}.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            margin-left:auto;
+            width:100%;
+            max-width:940px;
+            @include tablet {
+                max-width:none;
+                margin-left:0;
+                margin-top:50px;
+            }
+            @include mobile {
+                margin-top:30px;
+            }
+            .flex-top {
+                display:flex;
+                justify-content:space-between;
+                @include mobile {
+                    flex-wrap:wrap;
+                    justify-content:unset;
+                }
+                .col {
+                    @include mobile {
+                        width:100%;
+                        &:nth-child(1) ~ .col {
+                            margin-top:30px;
+                        }
+                        &:nth-child(2) ~ .col {
+                            display:none;
+                        }
+                    }
+                    .tit {
+                        margin-bottom:15px;
+                        font-size:16px;
+                        font-weight:500;
+                        @include mobile {
+                            margin-bottom:10px;
+                        }
+                    }
+                    .desc {
+                        color:#666;
+                        @include font-sm;
+                    }
+                    .btn-sm {
+                        display:block;
+                        margin-top:10px;
+                    }
+                    .links {
+                        li {
+                            margin-top:5px;
+                            &:first-child {
+                                margin-top:0;
+                            }
+                            a {
+                                display:inline-block;
+                                vertical-align:top;
+                                @include font-sm;
+                                &:hover {
+                                    text-decoration:underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .foot-cont {
+                margin-top:50px;
+                @include mobile {
+                    margin-top:30px;
+                }
+                ul.links {
+                    margin-bottom:10px;
+                    font-size:0;
+                    li {
+                        display:inline-block;
+                        vertical-align:top;
+                        &::after {
+                            content:' ';
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:1px;
+                            height:10px;
+                            margin:0 10px;
+                            background:#ddd;
+                        }
+                        &:last-child::after {
+                            display:none;
+                        }
+                        a {
+                            display:inline-block;
+                            vertical-align:middle;
+                            font-size:15px;
+                            font-weight:500;
+                        }
+                    }
+                }
+                .info {
+                    font-size:0;
+                    span {
+                        display:inline-block;
+                        vertical-align:top;
+                        color:#666;
+                        @include font-sm;
+                        &::after {
+                            content:' ';
+                            display:inline-block;
+                            vertical-align:top;
+                            width:1px;
+                            height:10px;
+                            margin:6px 10px 0;
+                            background:#999;
+                        }
+                        &:last-child::after {
+                            display:none;
+                        }
+                        @include mobile {
+                            display:block;
+                            &::after {
+                                display:none;
+                            }
+                        }
+                    }
+                }
+                .cont {
+                    margin-top:30px;
+                    color:#888;
+                    @include font-sm;
+                    @include mobile {
+                        margin-top:15px;
+                        br {
+                            display:none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

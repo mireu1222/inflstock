@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html', {
+        main : true
+    })
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="main">
+            <!-- visual -->
+            <div class="main-visual">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url('/images/img/img-visual01.jpg');">
+                            <div class="text">
+                                <p class="eyebrow">인플스톡's 인터뷰 EPISODE1</p>
+                                <h2 class="tit">일반인에서 100만 인플루언서까지!</h2>
+                                <a href="" class="btn-go">
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg');"></span>
+                                    <span class="name">유튜버 잇섭</span>
+                                    <span class="go">자세히 보러가기</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image:url('/images/img/img-visual01.jpg');">
+                            <div class="text">
+                                <p class="eyebrow">인플스톡's 인터뷰 EPISODE1</p>
+                                <h2 class="tit">일반인에서 100만 인플루언서까지!</h2>
+                                <a href="" class="btn-go">
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg');"></span>
+                                    <span class="name">유튜버 잇섭</span>
+                                    <span class="go">자세히 보러가기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-controls">
+                    <button type="button" class="btn-control prev"><span>이전</span></button>
+                    <button type="button" class="btn-control next"><span>다음</span></button>
+                </div>
+            </div>
+            <!-- // visual -->
+            <!-- search -->
+            <div class="search-wrap">
+                <span class="border-select-wrap">
+                    <select class="nice-select" aria-label="검색 기준 선택">
+                        <option value="">채널명</option>
+                        <option value="">채널명</option>
+                        <option value="">채널명</option>
+                    </select>
+                </span>
+                <input type="text" class="form-control" placeholder="채널 이름 또는 검색어를 입력하세요">
+                <button type="button" class="btn-search"><span class="blind">검색</span></button>
+            </div>
+            <!-- // search -->
+            <!-- 오늘의 콘텐츠, 실시간 랭킹 -->
+            <div class="sect01">
+                <div class="flex-box">
+                    <div class="left">
+                        <div class="tit-wrap">
+                            <h2 class="sect-title">오늘의 콘텐츠</h2>
+                            <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                        </div>
+                        @@include('./modules/contents-list-wrap.html', {
+                            type : 'column',
+                            title : true,
+                            cashType : true,
+                            list : [
+                                '', '', '', '', '', '', '', '', '', '', '', '',
+                            ]
+                        })
+                    </div>
+                    <div class="right">
+                        <div class="tit-wrap">
+                            <h2 class="sect-title">실시간 랭킹</h2>
+                            <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                        </div>
+                        @@include('./modules/infl-list.html', {
+                            oltype : true,
+                            list : [
+                                {
+                                    name : '인플루언서이름',
+                                    und : 'up',
+                                    num : '0.6'
+                                },
+                                {
+                                    name : '이름',
+                                    und : 'down',
+                                    num : '-0.6'
+                                },
+                                {
+                                    name : '인플루언서이름',
+                                    und : 'up',
+                                    num : '0.6'
+                                },
+                                {
+                                    name : '이름',
+                                    und : 'down',
+                                    num : '-0.6'
+                                },
+                                {
+                                    name : '이름',
+                                    und : 'down',
+                                    num : '-0.6'
+                                },
+                            ]
+                        })
+                    </div>
+                </div>
+            </div>
+            <!-- // 오늘의 콘텐츠, 실시간 랭킹 -->
+            <!-- 인플루언서 -->
+            <section class="sect02">
+                <div class="tit-wrap">
+                    <h2 class="sect-title">인플루언서</h2>
+                    <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                </div>
+                <div class="button-tabs" data-toggle="class-toggle">
+                    <ul class="tabs">
+                        <li class="active"><a href="#n">팔로워 순</a></li>
+                        <li><a href="#n">가격 순</a></li>
+                        <li><a href="#n">거래량 순</a></li>
+                        <li><a href="#n">가격 상승 순</a></li>
+                        <li><a href="#n">즐겨찾기 순</a></li>
+                    </ul>
+                </div>
+                @@include('./modules/contents-list-wrap.html', {
+                    type : 'slide',
+                    name2 : true,
+                    tag : true,
+                    count : 'up',
+                    list : [
+                        {
+                            und : 'up',
+                            ud : '0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }, {
+                            und : 'up',
+                            ud : '0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }, {
+                            und : 'up',
+                            ud : '0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }, {
+                            und : 'up',
+                            ud : '0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }, {
+                            und : 'down',
+                            ud : '-0.6'
+                        }
+                    ]
+                })
+            </section>
+            <!-- // 인플루언서 -->
+            <!-- 콘텐츠 -->
+            <section class="sect03">
+                <div class="tit-wrap">
+                    <h2 class="sect-title">콘텐츠</h2>
+                    <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                </div>
+                <div class="button-tabs" data-toggle="class-toggle">
+                    <ul class="tabs">
+                        <li class="active"><a href="#n">인기 순</a></li>
+                        <li><a href="#n">즐겨찾기 순</a></li>
+                    </ul>
+                </div>
+                @@include('./modules/contents-list-wrap.html', {
+                    type : 'slide',
+                    title : true,
+                    cashType : true,
+                    list : [
+                        '', '', '', '', '', '', '', '', '', ''
+                    ]
+                })
+            </section>
+            <!-- // 콘텐츠 -->
+            <!-- 최근 등록한 인플루언서 -->
+            <section class="sect04 full">
+                <div class="area">
+                    <div class="tit-wrap">
+                        <h2 class="sect-title">최근 등록한 인플루언서</h2>
+                        <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                    </div>
+                    @@include('./modules/contents-list-wrap.html', {
+                        type : 'slide',
+                        name2 : true,
+                        count : 'up',
+                        list : [
+                            {
+                                und : 'up',
+                                ud : '0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }, {
+                                und : 'up',
+                                ud : '0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }, {
+                                und : 'up',
+                                ud : '0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }, {
+                                und : 'up',
+                                ud : '0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }, {
+                                und : 'down',
+                                ud : '-0.6'
+                            }
+                        ]
+                    })
+                </div>
+            </section>
+            <!-- // 최근 등록한 인플루언서 -->
+            <!-- 인플스톡 소식 -->
+            <section class="sect05">
+                <div class="tit-wrap">
+                    <h2 class="sect-title">인플스톡 소식</h2>
+                    <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                </div>
+                <ul class="news-lists">
+                    <li>
+                        <a href="" class="inner">
+                            <span class="thumb" style="background-image:url('/images/@thumb.jpg');"></span>
+                            <div class="info">
+                                <p class="tit">인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감</p>
+                                <p class="by"><span class="blind">언론사</span>스포츠경향</p>
+                                <p class="date"><span class="blind">등록일</span>2021-06-25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="inner">
+                            <span class="thumb" style="background-image:url('/images/@thumb.jpg');"></span>
+                            <div class="info">
+                                <p class="tit">인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감</p>
+                                <p class="by"><span class="blind">언론사</span>스포츠경향</p>
+                                <p class="date"><span class="blind">등록일</span>2021-06-25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="inner">
+                            <span class="thumb" style="background-image:url('/images/@thumb.jpg');"></span>
+                            <div class="info">
+                                <p class="tit">인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감</p>
+                                <p class="by"><span class="blind">언론사</span>스포츠경향</p>
+                                <p class="date"><span class="blind">등록일</span>2021-06-25</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="inner">
+                            <span class="thumb" style="background-image:url('/images/@thumb.jpg');"></span>
+                            <div class="info">
+                                <p class="tit">인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감 인플스톡 소식 제목이 들어감</p>
+                                <p class="by"><span class="blind">언론사</span>스포츠경향</p>
+                                <p class="date"><span class="blind">등록일</span>2021-06-25</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- // 인플스톡 소식 -->
+            <!-- 친구들이 좋아하는 인플루언서 -->
+            <section class="sect06">
+                <div class="tit-wrap">
+                    <h2 class="sect-title">친구들이 좋아하는 인플루언서</h2>
+                    <a href="" class="btn-more"><span class="dot"></span><span class="blind">더보기</span></a>
+                </div>
+                <div class="friends-infl-lists">
+                    <div class="box">
+                        <div class="title">
+                            <span class="thumb" style="background-image:url('/images/@thumb2.jpg');"></span>
+                            <p>PURE님이<br>팔로잉하는 인플루언서입니다.</p>
+                        </div>
+                        <div class="cont">
+                            @@include('./modules/infl-list.html', {
+                                ultype : true,
+                                list : [
+                                    {
+                                        name : '인플루언서이름',
+                                        und : 'up',
+                                        num : '0.7'
+                                    },
+                                    {
+                                        name : '이름',
+                                        und : 'down',
+                                        num : '-0.7'
+                                    }
+                                ]
+                            })
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title">
+                            <span class="thumb" style="background-image:url('/images/@thumb2.jpg');"></span>
+                            <p>PURE님이<br>팔로잉하는 인플루언서입니다.</p>
+                        </div>
+                        <div class="cont">
+                            @@include('./modules/infl-list.html', {
+                                ultype : true,
+                                list : [
+                                    {
+                                        name : '인플루언서이름',
+                                        und : 'up',
+                                        num : '0.7'
+                                    },
+                                    {
+                                        name : '이름',
+                                        und : 'down',
+                                        num : '-0.7'
+                                    }
+                                ]
+                            })
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="title">
+                            <span class="thumb" style="background-image:url('/images/@thumb2.jpg');"></span>
+                            <p>PURE님이<br>팔로잉하는 인플루언서입니다.</p>
+                        </div>
+                        <div class="cont">
+                            @@include('./modules/infl-list.html', {
+                                ultype : true,
+                                list : [
+                                    {
+                                        name : '인플루언서이름',
+                                        und : 'up',
+                                        num : '0.7'
+                                    },
+                                    {
+                                        name : '이름',
+                                        und : 'down',
+                                        num : '-0.7'
+                                    }
+                                ]
+                            })
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // 친구들이 좋아하는 인플루언서 -->
+            <!-- banner -->
+            <div class="banners">
+                <div class="banner-area1">
+                    <h3 class="tit">
+                        <small>GUIDE</small>
+                        인플스톡이 처음이신가요?
+                    </h3>
+                    <p class="desc">인플스톡 이용가이드</p>
+                    <ul class="links">
+                        <li><a href="" class="link01">INS란?</a></li>
+                        <li><a href="" class="link02">인플캐쉬란?</a></li>
+                    </ul>
+                </div>
+                <div class="banner-area2">
+                    <h3 class="tit">인플스톡에서 인플루언서 등록하기</h3>
+                    <p class="desc">인플루언서의 새로운 가치를 만나보세요</p>
+                    <a href="" class="btn btn-md btn-point btn-go"><span>인플루언서 등록하기</span></a>
+                </div>
+            </div>
+            <!-- // banner -->
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+        
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+
+    <script>
+        $(function(){
+            const mainVisual = new Swiper('.main-visual .swiper-container', {
+                loop : true,
+                autoplay : {
+                    delay : 4000,
+                    disableOnInteraction : false
+                },
+                navigation : {
+                    prevEl : '.main-visual .slide-controls .btn-control.prev',
+                    nextEl : '.main-visual .slide-controls .btn-control.next',
+                }
+            });
+
+            const slide1 = new Swiper('.sect01 .swiper-container', {
+                // loop : true,
+                breakpoints : {
+                    768 : {
+                        slidesPerView : 2,
+                        slidesPerColumn : 2,
+                        spaceBetween : 30,
+                    },
+                    1025 : {
+                        slidesPerView : 3,
+                        slidesPerColumn : 2,
+                        spaceBetween : 60,
+                    }
+                },
+                pagination : {
+                    el : '.sect01 .slider-paging',
+                    type : 'bullets'
+                }
+            });
+
+            const slide2 = new Swiper('.sect02 .swiper-container', {
+                loop : true,
+                slidesPerView : 2,
+                slidesPerGroup : 2,
+                spaceBetween : 20,
+                breakpoints : {
+                    768 : {
+                        slidesPerView : 3,
+                        slidesPerGroup : 3,
+                        spaceBetween : 30,
+                    },
+                    1025 : {
+                        slidesPerView : 5,
+                        slidesPerGroup : 5,
+                        spaceBetween : 40,
+                    }
+                },
+                pagination : {
+                    el : '.sect02 .slider-paging',
+                    type : 'bullets'
+                },
+            });
+
+            const slide3 = new Swiper('.sect03 .swiper-container', {
+                loop : true,
+                slidesPerView : 5,
+                slidesPerGroup : 5,
+                spaceBetween : 40,
+                breakpoints : {
+                    768 : {
+                        slidesPerView : 3,
+                        slidesPerGroup : 3,
+                        spaceBetween : 30,
+                    },
+                    1025 : {
+                        slidesPerView : 5,
+                        slidesPerGroup : 5,
+                        spaceBetween : 40,
+                    }
+                },
+                pagination : {
+                    el : '.sect03 .slider-paging',
+                    type : 'bullets'
+                }
+            });
+
+            const slide4 = new Swiper('.sect04 .swiper-container', {
+                loop : true,
+                slidesPerView : 5,
+                slidesPerGroup : 5,
+                spaceBetween : 40,
+                breakpoints : {
+                    768 : {
+                        slidesPerView : 3,
+                        slidesPerGroup : 3,
+                        spaceBetween : 30,
+                    },
+                    1025 : {
+                        slidesPerView : 5,
+                        slidesPerGroup : 5,
+                        spaceBetween : 40,
+                    }
+                },
+                pagination : {
+                    el : '.sect04 .slider-paging',
+                    type : 'bullets'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

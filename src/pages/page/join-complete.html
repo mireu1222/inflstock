@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            <div class="member-wrap">
+                <div class="complete-page">
+                    <h2 class="tit">인플스톡 회원가입이 <em>완료</em>되었습니다!</h2>
+                    <p class="desc">회원님의 아이디는 <em>gildong2</em>입니다.<br>이제 인플스톡의 다양한 서비스를 누리세요!</p>
+                    <button type="button" class="btn btn-lg btn-point" data-toggle="modal" data-target="#modal-login"><span>로그인 하기</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+</body>
+</html>

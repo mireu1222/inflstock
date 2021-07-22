@@ -1,0 +1,133 @@
+/* common layout */
+.skip-navigation {
+    position:absolute;
+    z-index:9999;
+    a {
+        display:block;
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden;
+    }
+}
+#wrap {
+    .contents {
+        position:relative;
+        padding-top:160px;
+        padding-bottom:100px;
+        border-bottom:1px solid #ddd;
+        @include tablet {
+            padding-top:50px;
+        }
+        h2.cate-title {
+            @include contArea;
+            padding-top:80px;
+            font-size:40px;
+            font-weight:700;
+        }
+        ul.breadcrumbs {
+            @include contArea;
+            margin-top:20px;
+            margin-bottom:50px;
+            font-size:0;
+            li {
+                display:inline-block;
+                vertical-align:top;
+                color:#888;
+                @include font-sm;
+                &::after {
+                    content:'〉';
+                    margin:0 10px;
+                }
+                &:last-child::after {
+                    display:none;
+                }
+            }
+        }
+        h3.page-title {
+            @include contArea;
+            font-size:32px;
+            font-weight:500;
+        }
+        .contents-area {
+            @include contArea;
+            padding-top:50px;
+        }
+        .border-box {
+            padding:30px 20px;
+            border:1px solid #eee;
+            border-radius:4px;
+            @include mobile {
+                padding:20px 16px;
+            }
+        }
+    }
+    .complete-page {
+        text-align:center;
+        &::before {
+            content:' ';
+            display:block;
+            width:120px;
+            height:120px;
+            margin:0 auto 80px;
+            background:url('/images/icon/icon-complete.png') center no-repeat;
+            @include mobile {
+                width:60px;
+                height:60px;
+                margin-bottom:40px;
+                background-size:100%;
+            }
+        }
+        .tit {
+            @include font-title;
+            word-break:keep-all;
+            em {
+                font-weight:700;
+            }
+        }
+        .desc {
+            margin-top:30px;
+            @include font-md;
+            em {
+                color:$point;
+            }
+        }
+        .btn {
+            display:block;
+            width:100%;
+            max-width:450px;
+            margin:60px auto 0;
+            @include mobile {
+                margin-top:40px;
+            }
+        }
+    }
+}
+
+/* dim */
+.common-dim {
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:rgba(#000, 0.5);
+    z-index:1005;
+}
+
+.nodata {
+    display:block;
+    padding:100px 0;
+    text-align:center;
+    color:$gray;
+    font-size:18px;
+    font-weight:500;
+    &::before {
+        content:' ';
+        display:block;
+        width:73px;
+        height:72px;
+        margin:0 auto 25px;
+        background:url('/images/@nodata.gif') center no-repeat;
+    }
+}

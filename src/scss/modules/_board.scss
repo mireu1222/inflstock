@@ -1,0 +1,97 @@
+/* board */
+.list-filter {
+    display:flex;
+    align-items:flex-end;
+    margin-bottom:30px;
+    .search {
+        display:flex;
+        width:100%;
+        max-width:300px;
+        border:1px solid $border;
+        .form-control {
+            border:none;
+        }
+        .btn-search {
+            display:block;
+            width:50px;
+            height:50px;
+            background:url('/images/icon/icon-search.gif') center no-repeat;
+        }
+    }
+    .total {
+        order:-1;
+        margin-right:auto;
+        font-size:14px;
+        color:#666;
+        em {
+            margin-left:4px;
+            color:$point;
+            font-weight:500;
+        }
+    }
+}
+.board-list-wrap {
+    border-top:1px solid $border;
+    padding-top:30px;
+    ul.lists {
+        display:flex;
+        flex-wrap:wrap;
+        margin-top:-40px;
+        margin-left:-50px;
+        > li {
+            width:calc(100% / 3);
+            padding-left:50px;
+            margin-top:40px;
+            a.inner {
+                display:block;
+                padding:30px 20px;
+                background:#fff;
+                box-shadow:$boxshadow;
+                .top {
+                    margin-bottom:5px;
+                    @include font-sm;
+                    font-weight:500;
+                }
+                .tit {
+                    position:relative;
+                    display:inline-block;
+                    max-width:100%;
+                    @include font;
+                    font-weight:500;
+                    @include textEllipsis;
+                    &.new {
+                        padding-right:20px;
+                        &::after {
+                            content:'N';
+                            position:absolute;
+                            top:50%;
+                            right:0;
+                            width:16px;
+                            height:16px;
+                            margin-top:-8px;
+                            border:1px solid $point;
+                            border-radius:50%;
+                            color:$point;
+                            font-size:11px;
+                            line-height:14px;
+                            font-weight:700;
+                            text-align:center;
+                        }
+                    }
+                }
+                .cont {
+                    height:24*5px;
+                    margin-top:20px;
+                    color:#666;
+                    @include font;
+                    @include textEllipsisClamp(5);
+                }
+                .date {
+                    margin-top:25px;
+                    font-size:14px;
+                    font-weight:500;
+                }
+            }
+        }
+    }
+}

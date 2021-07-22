@@ -1,0 +1,24 @@
+@@if(context.cate01){<h2 class="cate-title">인플스톡 소개</h2>}
+@@if(context.cate02){<h2 class="cate-title">INS 거래소</h2>}
+@@if(context.cate03){<h2 class="cate-title">콘텐츠 스토어</h2>}
+@@if(context.cate04){<h2 class="cate-title">인플루언서 등록</h2>}
+@@if(context.cate05){<h2 class="cate-title">고객지원</h2>}
+<ul class="breadcrumbs">
+    <li>HOME</li>
+    @@if(context.cate01){<li>인플스톡 소개</li>}
+    @@if(context.cate02){<li>INS 거래소</li>}
+    @@if(context.cate03){<li>콘텐츠 스토어</li>}
+    @@if(context.cate04){<li>인플루언서 등록</li>}
+    @@if(context.cate05){<li>고객지원</li>}
+    <li>@@title</li>
+</ul>
+@@if(context.cate05){
+    <div class="border-tabs">
+        <ul class="tabs">
+            <li@@if(context.cate05 === '01'){ class="active"}><a href="/page/notice.html">공지사항</a></li>
+            <li@@if(context.cate05 === '02'){ class="active"}><a href="/page/qna.html">1:1문의</a></li>
+            <li@@if(context.cate05 === '03'){ class="active"}><a href="/page/faq.html">자주찾는 질문</a></li>
+        </ul>
+    </div>
+}
+<h3 class="page-title">@@title</h3>

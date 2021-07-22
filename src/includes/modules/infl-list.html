@@ -1,0 +1,33 @@
+@@if(context.oltype){
+    <ol class="ranking-lists">
+}
+@@if(context.ultype){
+    <ul class="ranking-lists type2">
+}
+    @@for(var i=0; i < list.length; i++){
+        <li>
+            <div class="inner">
+                @@if(context.oltype){
+                    <span class="num">`+[i+1]+`</span>
+                }
+                <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                <p class="info">
+                    <span class="name">`+list[i].name+`</span>
+                    <span class="score">11,000(1INS)</span>
+                    <span class="total">총 9,999만 INS</span>
+                </p>
+                <div class="tags">
+                    <span>태그</span>
+                    <span>태그태그</span>
+                    <span>태그</span>
+                </div>
+                <p class="und `+list[i].und+`">100 (`+list[i].num+`%)</p>
+            </div>
+        </li>
+    }
+@@if(context.oltype){
+    </ol>
+}
+@@if(context.ultype){
+    </ul>
+}

@@ -1,0 +1,94 @@
+/* tab */
+.button-tabs {
+    overflow:hidden;
+    ul.tabs {
+        font-size:0;
+        white-space:nowrap;
+        li {
+            position:relative;
+            display:inline-block;
+            vertical-align:top;
+            &::before {
+                content:' ';
+                position:absolute;
+                top:50%;
+                left:0;
+                width:1px;
+                height:12px;
+                margin-top:-6px;
+                background:#ddd;
+            }
+            &:first-child::before {
+                display:none;
+            }
+            &.active::before {
+                display:none;
+            }
+            &.active + li::before {
+                display:none;
+            }
+            a {
+                position:relative;
+                display:block;
+                height:30px;
+                padding:0 20px;
+                border-radius:15px;
+                background:transparent;
+                font-size:16px;
+                line-height:30px;
+            }
+            &.active a {
+                color:$white;
+                background:$point;
+            }
+        }
+    }
+}
+
+.border-tabs {
+    @include contArea;
+    margin-bottom:60px;
+    ul.tabs {
+        position:relative;
+        display:flex;
+        &::before {
+            content:' ';
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            border:1px solid $border;
+        }
+        li {
+            position:relative;
+            flex:1;
+            &::before {
+                content:' ';
+                position:absolute;
+                top:0;
+                bottom:0;
+                left:0;
+                width:1px;
+                background:$border;
+            }
+            a {
+                position:relative;
+                display:block;
+                border:3px solid transparent;
+                color:#666;
+                font-size:17px;
+                line-height:54px;
+                text-align:center;
+            }
+            &.active a {
+                border-color:$point;
+                color:$point;
+                font-weight:500;
+            }
+            &.active + li::before {
+                display:none;
+            }
+        }
+    }
+}
