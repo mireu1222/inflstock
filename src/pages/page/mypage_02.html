@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                mypage : '02',
+                title : '구매내역'
+            })
+
+            <div class="contents-area">
+                <div class="mypage-wrap">
+                    <!-- filter -->
+                    <div class="search-filter">
+                        <div class="box">
+                            <input type="text" class="form-control datepicker" aria-label="검색 시작날짜 선택">
+                            <span class="bar">~</span>
+                            <input type="text" class="form-control datepicker" aria-label="검색 종료날짜 선택">
+                            <span class="select-wrap">
+                                <select class="nice-select" aria-label="상태 선택">
+                                    <option value="">전체상태</option>
+                                </select>
+                            </span>
+                            <button type="button" class="btn btn-md btn-gray"><span>조회</span></button>
+                        </div>
+                    </div>
+                    <!-- // filter -->
+                    @@include('./modules/deal-list.html')
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html', {
+            review : true
+        })
+        <!-- // modal -->
+    </div>
+
+    <script>
+        starrating(); // 별점 hover class toggle, on click .on class toggle
+    </script>
+</body>
+</html>

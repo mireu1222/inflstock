@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                mypage : '06',
+                title : '회원탈퇴'
+            })
+
+            <div class="contents-area">
+                <div class="mypage-wrap">
+                    <div class="secession-msg">
+                        <p class="tit">MEMBERSHIP</p>
+                        <p class="desc">
+                            회원 탈퇴는 사이트에서 제공하는 서비스에 대한 탈퇴를 의미합니다. <br>
+                            즉, 회원님께서 등록하셨던 아이디/패스워드로 더 이상 이 사이트에 로그인 하실 수 없으며,<br>
+                            이 사이트에서 제공하는 다양한 서비스를 이용하실 수 없습니다.
+                        </p>
+                        <p class="desc bg">이 사이트에서 발송하는 뉴스레터는 물론, 예약내역 및 이벤트 소식 등을 전해드리는 이메일도 받으실 수 없습니다.<br>단, 이미 예약된 메일은 서비스 탈퇴 후 최장 2주간 발송될 수 있습니다. 회원님의 양해있으시길 바랍니다.</p>
+                    </div>
+                    <form action="">
+                        <div class="form-wrap col-type">
+                            <div class="row">
+                                <p class="label">탈퇴사유</p>
+                                <div class="forms">
+                                    <div class="slt-lists size3">
+                                        <ul aria-label="탈퇴사유 다중 선택">
+                                            <li>
+                                                <span class="chk-wrap">
+                                                    <input type="checkbox" id="chk01" name="chk">
+                                                    <label for="chk01">고객서비스(문의 대응, 상담, 상품 구매 등)불만</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chk-wrap">
+                                                    <input type="checkbox" id="chk02" name="chk">
+                                                    <label for="chk02">개인정보유출 우려</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chk-wrap">
+                                                    <input type="checkbox" id="chk03" name="chk">
+                                                    <label for="chk03">서비스 이용 불만</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chk-wrap">
+                                                    <input type="checkbox" id="chk04" name="chk">
+                                                    <label for="chk04">사이트 기능 불만</label>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="chk-wrap">
+                                                    <input type="checkbox" id="chk05" name="chk">
+                                                    <label for="chk05">방문 빈도가 낮음</label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="ipt01">고객의견</label>
+                                <div class="forms">
+                                    <textarea class="form-control" id="ipt01" placeholder="내용 입력"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="ipt02">비밀번호 확인</label>
+                                <div class="forms">
+                                    <input type="password" id="ipt02" class="form-control" placeholder="비밀번호 입력">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-lg btn-gray"><span>취소하기</span></button>
+                            <button type="button" class="btn btn-lg btn-point"><span>탈퇴하기</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+</body>
+</html>

@@ -62,7 +62,7 @@
 }
 @mixin font-lg {
     font-size:20px;
-    line-height:38px;
+    line-height:28px;
     @include mobile {
         font-size:18px;
         line-height:26px;

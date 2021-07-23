@@ -38,15 +38,22 @@
         opacity:0.5;
     }
     &.datepicker {
-        padding-right:60px;
+        padding-right:50px;
         background-image:url('/images/icon/icon-cal.png');
         background-repeat:no-repeat;
-        background-position:right 19px center;
+        background-position:right 12px center;
+        @include mobile {
+            padding-right:44px;
+            background-size:20px;
+        }
     }
 }
 textarea.form-control {
     resize:none;
     height:180px;
+    @include mobile {
+        height:150px;
+    }
 }
 
 /* checkbox, radio */

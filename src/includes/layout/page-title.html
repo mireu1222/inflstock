@@ -3,6 +3,7 @@
 @@if(context.cate03){<h2 class="cate-title">콘텐츠 스토어</h2>}
 @@if(context.cate04){<h2 class="cate-title">인플루언서 등록</h2>}
 @@if(context.cate05){<h2 class="cate-title">고객지원</h2>}
+@@if(context.mypage){<h2 class="cate-title">마이페이지</h2>}
 <ul class="breadcrumbs">
     <li>HOME</li>
     @@if(context.cate01){<li>인플스톡 소개</li>}
@@ -10,7 +11,10 @@
     @@if(context.cate03){<li>콘텐츠 스토어</li>}
     @@if(context.cate04){<li>인플루언서 등록</li>}
     @@if(context.cate05){<li>고객지원</li>}
-    <li>@@title</li>
+    @@if(context.mypage){<li>마이페이지</li>}
+    @@if(context.title){
+        <li>@@title</li>
+    }
 </ul>
 @@if(context.cate05){
     <div class="border-tabs">
@@ -21,4 +25,20 @@
         </ul>
     </div>
 }
-<h3 class="page-title">@@title</h3>
+@@if(context.mypage){
+    <div class="border-tabs">
+        <div class="x-scroll">
+            <ul class="tabs">
+                <li@@if(context.mypage === '01'){ class="active"}><a href="/page/mypage_01.html">내보유 주식</a></li>
+                <li@@if(context.mypage === '02'){ class="active"}><a href="/page/mypage_02.html">구매내역</a></li>
+                <li@@if(context.mypage === '03'){ class="active"}><a href="/page/mypage_03.html">판매내역</a></li>
+                <li@@if(context.mypage === '04'){ class="active"}><a href="/page/mypage_04.html">나의정보수정</a></li>
+                <li@@if(context.mypage === '05'){ class="active"}><a href="/page/mypage_05.html">1:1문의내역</a></li>
+                <li@@if(context.mypage === '06'){ class="active"}><a href="/page/mypage_06.html">회원탈퇴</a></li>
+            </ul>
+        </div>
+    </div>
+}
+@@if(context.title){
+    <h3 class="page-title">@@title</h3>
+}

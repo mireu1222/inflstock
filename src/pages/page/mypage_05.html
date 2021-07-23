@@ -15,17 +15,18 @@
         <!-- contents -->
         <div id="container" class="contents">
             @@include('./layout/page-title.html', {
-                cate05 : '01',
-                title : '공지사항'
+                mypage : '05',
+                title : '1:1문의내역'
             })
 
             <div class="contents-area">
-                @@include('./modules/board-list.html', {
-                    board : true,
-                    page : 'notice-view'
-                })
-
-                @@include('./modules/pagination.html')
+                <div class="mypage-wrap">
+                    @@include('./modules/board-list.html', {
+                        qna : true,
+                        page : 'mypage_05_view'
+                    })
+                    @@include('./modules/pagination.html')
+                </div>
             </div>
         </div>
         <!-- // contents -->

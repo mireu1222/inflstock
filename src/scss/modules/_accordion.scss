@@ -14,7 +14,7 @@
                     width:100%;
                     padding:17px 50px 17px 70px;
                     text-align:left;
-                    @include font-lg;
+                    @include font;
                     word-break:keep-all;
                     &::before {
                         content:'Q';
@@ -60,8 +60,8 @@
                 padding-left:70px;
                 border-top:1px solid $border;
                 background:$disabled;
-                color:$basic;
-                @include font-lg;
+                color:#666;
+                @include font;
                 word-break:keep-all;
                 &::before {
                     content:'A';

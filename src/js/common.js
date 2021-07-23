@@ -10,7 +10,7 @@ $(function () {
 });
 
 $(window).on('load', function(){
-    xScroll('.sub-depth-wrap .scroll');
+    xScroll('.x-scroll');
 });
 
 function headerEvt() {
@@ -396,5 +396,20 @@ function modalToggle() {
         modal.hide();
         modal.removeAttr('aria-modal');
         modal.attr('aria-hidden', true);
+    });
+}
+
+function starrating(){
+    $('.star-rating .stars').hover(function(){
+        $(this).addClass('hover').prevAll('.stars').addClass('hover');
+    }, function(){
+        $('.star-rating .stars').removeClass('hover');
+    });
+    $('.star-rating .stars').click(function(){
+        var my = $(this);
+        var allBtn = my.siblings('.stars');
+
+        allBtn.removeClass('on');
+        my.addClass('on').prevAll('.stars').addClass('on');
     });
 }

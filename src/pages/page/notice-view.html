@@ -20,12 +20,9 @@
             })
 
             <div class="contents-area">
-                @@include('./modules/board-list.html', {
-                    board : true,
-                    page : 'notice-view'
+                @@include('./modules/board-view.html', {
+                    prev : 'notice'
                 })
-
-                @@include('./modules/pagination.html')
             </div>
         </div>
         <!-- // contents -->

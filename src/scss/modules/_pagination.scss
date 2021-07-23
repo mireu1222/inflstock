@@ -1,8 +1,12 @@
 /* pagination */
 .pagination {
-    margin-top:70px;
+    margin-top:60px;
     font-size:0;
     text-align:center;
+    white-space:nowrap;
+    @include mobile {
+        margin-top:30px;
+    }
     .control-btn, 
     .page-btn-wrap,
     .page-btn-wrap .now,
@@ -21,11 +25,20 @@
         border-radius:50%;
         line-height:32px;
         background:#fff;
+        @include mobile {
+            width:30px;
+            height:30px;
+            font-size:13px;
+            line-height:28px;
+        }
     }
     .control-btn {
         position:relative;
         margin:0 6px;
         border-color:$border;
+        @include mobile {
+            margin:0 2px;
+        }
         &::before,
         &::after {
             content:' ';
@@ -38,6 +51,11 @@
             border:1px solid $cont;
             border-bottom:none;
             border-right:none;
+            @include mobile {
+                width:8px;
+                height:8px;
+                margin-top:-4px;
+            }
         }
         &.prev,
         &.pprev {
@@ -66,14 +84,23 @@
         &.next {
             &::before {
                 margin-left:-8px;
+                @include mobile {
+                    margin-left:-6px;
+                }
             }
         }
         &.nnext {
             &::before {
                 margin-left:-11px;
+                @include mobile {
+                    margin-left:-9px;
+                }
             }
             &::after {
                 margin-left:-6px;
+                @include mobile {
+                    margin-left:-4px;
+                }
             }
         }
         &.prev,
@@ -88,6 +115,9 @@
         > a,
         > .now {
             margin:0 6px;
+            @include mobile {
+                margin:0 2px;
+            }
         }
         .now {
             color:$point;

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '02',
+                title : '1:1문의'
+            })
+
+            <div class="contents-area">
+                <form action="">
+                    <div class="form-wrap col-type">
+                        <div class="row">
+                            <label for="ipt01">이름</label>
+                            <div class="forms"><input type="text" id="ipt01" class="form-control" placeholder="이름 입력"></div>
+                        </div>
+                        <div class="row">
+                            <label for="ipt02">연락처</label>
+                            <div class="forms"><input type="text" id="ipt02" class="form-control" placeholder="연락처 입력"></div>
+                        </div>
+                        <div class="row">
+                            <label for="ipt03">이메일</label>
+                            <div class="forms"><input type="text" id="ipt03" class="form-control" placeholder="이메일 입력"></div>
+                        </div>
+                        <div class="row">
+                            <label for="ipt04">제목</label>
+                            <div class="forms"><input type="text" id="ipt04" class="form-control" placeholder="제목 입력"></div>
+                        </div>
+                        <div class="row">
+                            <label for="ipt05">내용</label>
+                            <div class="forms">
+                                <textarea id="ipt05" class="form-control" placeholder="내용 입력"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="label">첨부파일</p>
+                            <div class="forms">
+                                <div class="inputfile-wrap">
+                                    <input type="text" class="form-control" placeholder="첨부파일 등록" readonly>
+                                    <input type="file" id="upload-file">
+                                    <label for="upload-file" class="btn btn-basic"><span>찾아보기</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agree-chk-box">
+                        <p class="tit">개인정보수집&middot;이용동의</p>
+                        <div class="agree-cont">
+                            ■ 수집하는 개인정보 항목<br>
+                            회사는 업무문의, 지원문의 등등을 위해 아래와 같은 개인정보를 수집하고 있습니다.<br>
+                            ο 수집항목 : 이름 , 휴대전화번호 , 이메일 , 쿠키 , 접속 IP 정보<br>
+                            ο 개인정보 수집방법 : 홈페이지, 서면양식<br>
+                            ■ 개인정보의 수집 및 이용목적<br>
+                            회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.<br>
+                            ο 업무에 대한 문의, 지원문의 등 민원처리, 고지사항 전달<br>
+                            ■ 개인정보의 보유 및 이용기간<br>
+                            원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간 동안 보존합니다.<br>
+                            ο 보존 항목 : 이름 , 휴대전화번호 , 이메일 , 접속 로그 , 쿠키 , 접속 IP<br>
+                            ο 정보보존 기간 : 1년
+                        </div>
+                        <span class="chk-wrap">
+                            <input type="checkbox" id="chk-agree">
+                            <label for="chk-agree">위 내용을 숙지하였으며 동의합니다.</label>
+                        </span>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-lg btn-gray"><span>취소</span></button>
+                        <button type="button" class="btn btn-lg btn-point"><span>문의등록</span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+</body>
+</html>

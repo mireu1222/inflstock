@@ -2,41 +2,22 @@
 // input list
 .slt-lists {
     overflow:hidden;
+    width:100%;
     ul {
         display:flex;
         flex-wrap:wrap;
         align-items:center;
         margin-top:-10px;
-    }
-    li {
-        margin-top:10px;
-        &.mix {
-            display:flex;
-            align-items:center;
-            padding-right:0 !important;
-            .rdo-wrap input + label {
-                white-space:nowrap;
-            }
-            .form-control {
-                margin-left:20px;
-            }
+        li {
+            margin-top:10px;
         }
     }
-    &.wide li {
-        min-width:200px;
-        padding-right:20px;
-        &.mix {
-            width:calc(100% - 400px);
-        }
-    }
-    &.auto li {
-        padding-right:60px;
-    }
-    &.col4 li {
-        min-width:25%;
-        padding-right:20px;
-        &.mix {
-            width:100%;
+    &.size3 {
+        li {
+            width:33.3%;
+            @include tablet {
+                width:100%;
+            }
         }
     }
 }
@@ -368,6 +349,236 @@
                     margin-top:5px;
                     color:#999;
                     font-size:14px;
+                }
+            }
+        }
+    }
+}
+
+// deal list
+.deal-lists-wrap {
+    .month {
+        margin-top:50px;
+        @include mobile {
+            margin-top:40px;
+        }
+        &:first-child {
+            margin-top:0;
+        }
+        .month-title {
+            position:relative;
+            text-align:center;
+            margin-bottom:35px;
+            @include mobile {
+                margin-bottom:20px;
+            }
+            &::before {
+                content:' ';
+                position:absolute;
+                top:50%;
+                left:0;
+                right:0;
+                height:1px;
+                background:#ddd;
+            }
+            span {
+                position:relative;
+                display:inline-block;
+                vertical-align:top;
+                width:150px;
+                height:50px;
+                border:1px solid #ddd;
+                background:#fff;
+                font-size:18px;
+                font-weight:500;
+                line-height:48px;
+                @include mobile {
+                    font-size:16px;
+                    height:40px;
+                    line-height:38px;
+                }
+            }
+        }
+    }
+    ul.lists {
+        > li {
+            padding-top:35px;
+            margin-top:35px;
+            border-top:1px solid #eee;
+            &:first-child {
+                border-top:none;
+                margin-top:0;
+                padding-top:0;
+            }
+            @include mobile {
+                margin-top:20px;
+                padding-top:20px;
+            }
+        }
+    }
+    .inner {
+        display:flex;
+        align-items:center;
+        @include mobile {
+            flex-wrap:wrap;
+        }
+        .prod-info {
+            @include calcs(width, 900px, 1360px);
+            @include mobile {
+                width:100%;
+            }
+        }
+        .seller-info {
+            margin:0 auto;
+            padding:0 20px;
+            text-align:center;
+            @include mobile {
+                display:flex;
+                align-items:center;
+                width:100%;
+                margin:0;
+                margin-top:10px;
+                padding:10px;
+                background:$disabled;
+                text-align:left;
+                overflow:hidden;
+            }
+            .name {
+                font-size:15px;
+                @include mobile {
+                    font-size:13px;
+                    overflow:hidden;
+                    @include textEllipsis;
+                }
+            }
+            .num {
+                margin-top:8px;
+                color:#666;
+                font-size:14px;
+                white-space:nowrap;
+                @include mobile {
+                    margin-top:0;
+                    margin-left:10px;
+                    margin-right:auto;
+                    font-size:13px;
+                }
+            }
+            .btn {
+                width:100px;
+                margin-top:8px;
+                background:#fff;
+                @include mobile {
+                    margin-top:0;
+                    margin-left:10px;
+                }
+            }
+        }
+        .buttons {
+            width:170px;
+            @include mobile {
+                display:flex;
+                width:100%;
+                margin-top:20px;
+            }
+            .btn {
+                display:block;
+                width:100%;
+                margin-top:10px;
+                &:first-child {
+                    margin-top:0;
+                }
+                @include mobile {
+                    flex:1;
+                    margin-top:0;
+                    margin-left:5px;
+                    &:first-child {
+                        margin-left:0;
+                    }
+                }
+            }
+        }
+    }
+    .prod-info {
+        position:relative;
+        min-height:140px;
+        padding-left:160px;
+        @include mobile {
+            min-height:60px;
+            padding-left:80px;
+        }
+        .thumb {
+            position:absolute;
+            left:0;
+            top:50%;
+            width:140px;
+            height:140px;
+            margin-top:-70px;
+            @include bg;
+            @include mobile {
+                top:0;
+                width:60px;
+                height:60px;
+                margin-top:0;
+            }
+        }
+        .prod-name {
+            @include font-md;
+            font-weight:500;
+        }
+        .option {
+            @include font-sm;
+            color:#666;
+            @include textEllipsis;
+        }
+        .infos {
+            margin-top:10px;
+            font-size:0;
+            p {
+                display:inline-block;
+                vertical-align:middle;
+                &.price {
+                    @include font;
+                    font-weight:500;
+                }
+                &.date {
+                    margin-left:20px;
+                    color:#888;
+                    @include font-sm;
+                }
+            }
+        }
+        .state {
+            margin-top:15px;
+            color:#666;
+            @include font-sm;
+            @include mobile {
+                margin-top:10px;
+            }
+            .tit {
+                margin-bottom:5px;
+                font-weight:500;
+                @include mobile {
+                    margin-bottom:0;
+                }
+            }
+        }
+    }
+    &.type2 {
+        .prod-info {
+            min-height:100px;
+            padding-left:120px;
+            @include mobile {
+                min-height:60px;
+                padding-left:80px;
+            }
+            .thumb {
+                top:0;
+                width:100px;
+                height:100px;
+                margin-top:0;
+                @include mobile {
+                    width:60px;
+                    height:60px;
                 }
             }
         }

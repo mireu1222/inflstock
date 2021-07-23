@@ -15,17 +15,11 @@
         <!-- contents -->
         <div id="container" class="contents">
             @@include('./layout/page-title.html', {
-                cate05 : '01',
-                title : '공지사항'
+                cate01 : '01',
+                title : '회사소개'
             })
 
             <div class="contents-area">
-                @@include('./modules/board-list.html', {
-                    board : true,
-                    page : 'notice-view'
-                })
-
-                @@include('./modules/pagination.html')
             </div>
         </div>
         <!-- // contents -->

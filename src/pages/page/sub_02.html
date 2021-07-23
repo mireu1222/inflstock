@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                cate02 : '01',
+            })
+
+            <div class="category-tabs" data-toggle="class-toggle">
+                <div class="x-scroll">
+                    <ul class="tabs">
+                        <li class="active"><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate0.jpg" alt=""></span>전체보기</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate1.jpg" alt=""></span>게임</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate2.jpg" alt=""></span>음악&middot;댄스</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate3.jpg" alt=""></span>뷰티&middot;패션</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate4.jpg" alt=""></span>엔터테인먼트</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate5.jpg" alt=""></span>스포츠</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate6.jpg" alt=""></span>미술</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate7.jpg" alt=""></span>쿠킹</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate8.jpg" alt=""></span>펫</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate9.jpg" alt=""></span>교육</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate10.jpg" alt=""></span>일상</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate11.jpg" alt=""></span>키즈</a></li>
+                        <li><a href="#n"><span class="thumb"><img src="/images/bg/bg-cate12.jpg" alt=""></span>기타</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contents-area">
+                @@include('./modules/list-filter.html', {
+                    tab : true,
+                    placeholder : '콘텐츠명, 인플루언서, 카테고리'
+                })
+
+                @@include('./modules/ins-list.html', {
+                    list : 10
+                })
+
+                @@include('./modules/pagination.html')
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+</body>
+</html>

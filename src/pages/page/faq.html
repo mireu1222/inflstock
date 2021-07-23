@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                cate05 : '03',
+                title : '자주찾는 질문'
+            })
+
+            <div class="contents-area">
+                <div class="text-tabs">
+                    <div class="x-scroll">
+                        <ul class="tabs">
+                            <li class="active"><a href="">전체</a></li>
+                            <li><a href="">카테고리1</a></li>
+                            <li><a href="">카테고리2</a></li>
+                            <li><a href="">카테고리3</a></li>
+                            <li><a href="">카테고리3</a></li>
+                            <li><a href="">카테고리3</a></li>
+                        </ul>
+                    </div>
+                </div>
+                @@include('./modules/accordion-list.html')
+                @@include('./modules/pagination.html')
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html')
+        <!-- // modal -->
+    </div>
+
+    <script>
+        $(function(){
+            accordion();
+        });
+    </script>
+</body>
+</html>

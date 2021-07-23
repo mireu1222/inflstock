@@ -19,17 +19,34 @@
         @include tablet {
             padding-top:50px;
         }
+        @include mobile {
+            padding-bottom:60px;
+        }
         h2.cate-title {
             @include contArea;
             padding-top:80px;
             font-size:40px;
             font-weight:700;
+            @include tablet {
+                padding-top:60px;
+            }
+            @include mobile {
+                padding-top:40px;
+                font-size:32px;
+            }
         }
         ul.breadcrumbs {
             @include contArea;
             margin-top:20px;
             margin-bottom:50px;
             font-size:0;
+            @include tablet {
+                margin-bottom:40px;
+            }
+            @include mobile {
+                margin-top:10px;
+                margin-bottom:30px;
+            }
             li {
                 display:inline-block;
                 vertical-align:top;
@@ -48,10 +65,16 @@
             @include contArea;
             font-size:32px;
             font-weight:500;
+            @include mobile {
+                font-size:26px;
+            }
         }
         .contents-area {
             @include contArea;
             padding-top:50px;
+            @include tablet {
+                padding-top:40px;
+            }
         }
         .border-box {
             padding:30px 20px;
@@ -115,19 +138,38 @@
     z-index:1005;
 }
 
+/* nodata */
 .nodata {
     display:block;
-    padding:100px 0;
+    padding:80px 0;
     text-align:center;
     color:$gray;
-    font-size:18px;
+    @include font;
     font-weight:500;
     &::before {
         content:' ';
         display:block;
         width:73px;
         height:72px;
-        margin:0 auto 25px;
+        margin:0 auto 20px;
         background:url('/images/@nodata.gif') center no-repeat;
+    }
+}
+
+/* star rating */
+.star-rating {
+    font-size:0;
+    text-align:center;
+    button.stars {
+        display:inline-block;
+        vertical-align:top;
+        width:40px;
+        height:30px;
+        background:url('/images/icon/icon-star-off.png') center no-repeat;
+        background-size:30px;
+        &.on,
+        &.hover {
+            background-image:url('/images/icon/icon-star-on.png');
+        }
     }
 }
