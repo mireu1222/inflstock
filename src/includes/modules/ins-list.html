@@ -1,12 +1,34 @@
 <div class="ins-lists-wrap">
     <ul class="lists">
-        @@for(var i=0; i < list; i++){
+        @@for(var i=0; i < list.length; i++){
             <!-- loop -->
             <li>
                 <div class="inner">
                     <div class="infl-info">
-                        
+                        <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                        <p class="name">인플루언서이름</p>
+                        <p class="desc">인플루언서가 입력한 자기 소개가 들어감 인플루언서가 입력한 자기 소개가 들어감 인플루언서가 입력한 자기 소개가 들어감</p>
+                        <p class="category">카테고리 : 미술</p>
                     </div>
+                    <div class="dl-info i">
+                        <dl>
+                            <dt>총 INS 수</dt>
+                            <dd>
+                                1,000,000
+                                <small>(팔로워 수 X 10)</small>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="dl-info c">
+                        <dl>
+                            <dt>가격(1INS)</dt>
+                            <dd>
+                                200
+                                <span class="und `+list[i].und+`">500 (`+list[i].num+`%)</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <a href="" class="btn btn-point"><span>INS 거래하기</span></a>
                 </div>
             </li>
             <!-- // loop -->

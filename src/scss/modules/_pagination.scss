@@ -20,9 +20,9 @@
         width:34px;
         height:34px;
         font-size:16px;
-        color:#999;
-        border:1px solid transparent;
-        border-radius:50%;
+        color:#666;
+        border:1px solid $border;
+        border-left:none;
         line-height:32px;
         background:#fff;
         @include mobile {
@@ -34,11 +34,7 @@
     }
     .control-btn {
         position:relative;
-        margin:0 6px;
         border-color:$border;
-        @include mobile {
-            margin:0 2px;
-        }
         &::before,
         &::after {
             content:' ';
@@ -112,16 +108,14 @@
     }
     .page-btn-wrap {
         margin:0;
-        > a,
-        > .now {
-            margin:0 6px;
-            @include mobile {
-                margin:0 2px;
-            }
-        }
         .now {
-            color:$point;
+            background:#333;
+            border-color:#333;
+            color:#fff;
             font-weight:500;
         }
+    }
+    > *:first-child {
+        border-left:1px solid $border;
     }
 }

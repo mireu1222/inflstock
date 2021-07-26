@@ -45,7 +45,28 @@
                 })
 
                 @@include('./modules/ins-list.html', {
-                    list : 10
+                    list : [
+                        {
+                            und : 'up',
+                            num : '2.2'
+                        },
+                        {
+                            und : 'down',
+                            num : '-2.2'
+                        },
+                        {
+                            und : 'up',
+                            num : '2.2'
+                        },
+                        {
+                            und : 'up',
+                            num : '2.2'
+                        },
+                        {
+                            und : 'down',
+                            num : '-2.2'
+                        },
+                    ]
                 })
 
                 @@include('./modules/pagination.html')

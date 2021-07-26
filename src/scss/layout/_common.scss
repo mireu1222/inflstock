@@ -63,18 +63,16 @@
         }
         h3.page-title {
             @include contArea;
+            margin-bottom:50px;
             font-size:32px;
             font-weight:500;
             @include mobile {
+                margin-bottom:30px;
                 font-size:26px;
             }
         }
         .contents-area {
             @include contArea;
-            padding-top:50px;
-            @include tablet {
-                padding-top:40px;
-            }
         }
         .border-box {
             padding:30px 20px;

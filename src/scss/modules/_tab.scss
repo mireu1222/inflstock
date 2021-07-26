@@ -1,6 +1,13 @@
 /* tab */
 .button-tabs {
     overflow:hidden;
+    &.type2 {
+        ul.tabs {
+            li.active a {
+                background:$point;
+            }
+        }
+    }
     ul.tabs {
         font-size:0;
         white-space:nowrap;
@@ -36,10 +43,14 @@
                 background:transparent;
                 font-size:16px;
                 line-height:30px;
+                @include mobile {
+                    padding:0 12px;
+                    font-size:14px;
+                }
             }
             &.active a {
                 color:$white;
-                background:$point;
+                background:$basic;
             }
         }
     }
@@ -149,8 +160,11 @@
 
 .category-tabs {
     @include contArea;
-    margin-bottom:50px;
+    margin-bottom:70px;
     overflow:hidden;
+    @include mobile {
+        margin-bottom:40px;
+    }
     ul.tabs {
         font-size:0;
         li {
@@ -167,6 +181,11 @@
                 color:#666;
                 font-size:16px;
                 font-weight:500;
+                @include mobile {
+                    width:auto;
+                    font-size:14px;
+                    white-space:nowrap;
+                }
                 .thumb {
                     position:relative;
                     display:block;
@@ -174,6 +193,11 @@
                     margin-bottom:20px;
                     border-radius:50%;
                     overflow:hidden;
+                    @include mobile {
+                        width:44px;
+                        height:44px;
+                        margin:0 auto 10px;
+                    }
                     &::after {
                         content:' ';
                         position:absolute;

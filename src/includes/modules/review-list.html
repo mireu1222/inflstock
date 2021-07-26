@@ -1,0 +1,53 @@
+<div class="review-lists-wrap">
+    <ul class="lists">
+        @@for(var i=0; i < list; i++){
+            <li>
+                <div class="inner">
+                    <div class="top">
+                        <span class="thumb" style="background-image:url('/images/@noimg.gif')"></span>
+                        <div class="by">
+                            <div class="rating r`+[i+1]+`">
+                                <span class="on"></span>
+                                <span class="num">`+[i+1]+`</span>
+                            </div>
+                            <p class="name">inflstock***</p>
+                        </div>
+                        <button type="button" class="btn-like"><span class="blind">좋아요</span><span>135</span></button>
+                    </div>
+                    <div class="conts">
+                        <span class="thumb" style="background-image:url('/images/@thumb.jpg')"></span><!-- 등록한 이미지 없을 때 DOM 삭제 -->
+                        <div class="review-cont">
+                            <p class="tit">후기 제목이 들어감</p>
+                            <p class="desc">후기 내용이 들어감 후기 내용이 들어감 후기 내용이 들어감후기 내용이 들어감</p>
+                            <p class="date"><span class="blind">작성일</span>2021-07-07</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+        <!-- 등록한 이미지가 없는 case -->
+        <li>
+            <div class="inner">
+                <div class="top">
+                    <span class="thumb" style="background-image:url('/images/@noimg.gif')"></span>
+                    <div class="by">
+                        <div class="rating r5">
+                            <span class="on"></span>
+                            <span class="num">5</span>
+                        </div>
+                        <p class="name">inflstock***</p>
+                    </div>
+                    <button type="button" class="btn-like on"><span class="blind">좋아요</span><span>135</span></button><!-- 후기글 좋아요 누른 경우 '.on addClass' -->
+                </div>
+                <div class="conts">
+                    <div class="review-cont">
+                        <p class="tit">후기 제목이 들어감</p>
+                        <p class="desc">후기 내용이 들어감 후기 내용이 들어감 후기 내용이 들어감후기 내용이 들어감</p>
+                        <p class="date"><span class="blind">작성일</span>2021-07-07</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- // 등록한 이미지가 없는 case -->
+    </ul>
+</div>

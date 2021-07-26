@@ -1,0 +1,28 @@
+<div class="store-lists-wrap">
+    <ul class="lists">
+        @@for(var i=0; i < list; i++){
+            <li>
+                <a href="/page/@@page.html" class="inner">
+                    <span class="thumb" style="background-image:url('/images/@thumb.jpg')"></span>
+                    <div class="info">
+                        <div class="top">
+                            <p class="name">
+                                <span class="pic" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                <span>인플루언서이름</span>
+                            </p>
+                            <p class="cash"><span class="blind">인플캐쉬</span>25,000</p>
+                        </div>
+                        <p class="title">컨텐츠 설명 제목이 들어감</p>
+                        <p class="desc">컨텐츠 설명 내용이 들어감 컨텐츠 설명 내용이 들어감</p>
+                        <p class="tags">
+                            <span class="tag">태그명</span>
+                            <span class="tag">태그명2</span>
+                            <span class="tag">태그명3</span>
+                        </p>
+                        <p class="category">카테고리 : 미술</p>
+                    </div>
+                </a>
+            </li>
+        }
+    </ul>
+</div>

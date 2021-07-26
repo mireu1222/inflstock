@@ -18,7 +18,7 @@
         width:50px;
         min-width:50px;
         height:50px;
-        background:url('/images/icon/icon-search.gif') right no-repeat;
+        background:url('/images/icon/icon-search.png') right no-repeat;
     }
 }
 
@@ -27,18 +27,19 @@
     display:flex;
     align-items:flex-end;
     margin-bottom:30px;
-    @include mobile {
+    @include tablet {
         display:block;
         margin-bottom:10px;
     }
     .search {
         order:2;
         display:flex;
-        width:100%;
+        width:40%;
         max-width:370px;
         margin-left:auto;
-        border-bottom:2px solid $point;
+        border-bottom:2px solid #333;
         @include mobile {
+            width:100%;
             max-width:none;
         }
         .form-control {
@@ -49,7 +50,7 @@
             display:block;
             width:50px;
             height:50px;
-            background:url('/images/icon/icon-search.gif') right no-repeat;
+            background:url('/images/icon/icon-search-bk.png') right no-repeat;
             @include mobile {
                 width:44px;
                 height:44px;
@@ -61,13 +62,18 @@
         margin-right:auto;
         font-size:14px;
         color:#666;
-        @include mobile {
+        @include tablet {
             margin-top:20px;
         }
         em {
             margin-left:4px;
             color:$point;
             font-weight:500;
+        }
+    }
+    @include tablet {
+        .button-tabs {
+            margin-top:20px;
         }
     }
 }

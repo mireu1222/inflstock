@@ -11,6 +11,7 @@ $(function () {
 
 $(window).on('load', function(){
     xScroll('.x-scroll');
+    xScroll('.m-scroll');
 });
 
 function headerEvt() {
