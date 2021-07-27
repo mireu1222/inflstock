@@ -1,4 +1,344 @@
 /* contents */
+// 회사소개
+.sub0101 {
+    .title {
+        position:relative;
+        height:510px;
+        background:url('/images/bg/bg-sub0101.jpg') center no-repeat;
+        background-size:cover;
+        @include tablet {
+            height:280px;
+        }
+        @include mobile {
+            height:200px;
+        }
+        span {
+            position:absolute;
+            left:50%;
+            bottom:100px;
+            width:100%;
+            max-width:1400px;
+            padding:0 20px;
+            font-size:40px;
+            line-height:42px;
+            font-weight:500;
+            transform:translateX(-50%);
+            @include tablet {
+                bottom:40px;
+            }
+            @include mobile {
+                bottom:20px;
+                padding:0 16px;
+                font-size:30px;
+                line-height:32px;
+            }
+        }
+    }
+    .text-lists {
+        display:flex;
+        @include contArea;
+        padding-top:100px;
+        padding-bottom:100px;
+        @include tablet {
+            padding-top:60px;
+            padding-bottom:60px;
+        }
+        @include mobile {
+            display:block;
+            padding:40px 16px;
+        }
+        li {
+            flex:1;
+            margin-left:80px;
+            @include tablet {
+                margin-left:20px;
+            }
+            @include mobile {
+                margin-left:0;
+                margin-top:20px;
+            }
+            &:first-child {
+                margin-top:0;
+                margin-left:0;
+            }
+            .tit {
+                min-height:115px;
+                font-size:30px;
+                line-height:32px;
+                font-weight:700;
+                word-break:keep-all;
+                @include tablet {
+                    min-height:137px;
+                }
+                @include mobile {
+                    min-height:auto;
+                    font-size:20px;
+                    line-height:22px;
+                }
+                small {
+                    display:block;
+                    margin-bottom:5px;
+                    font-size:16px;
+                    line-height:1;
+                    color:$point;
+                    @include mobile {
+                        font-size:14px;
+                    }
+                }
+            }
+            .desc {
+                margin-top:auto;
+                color:#666;
+                @include font;
+                word-break:keep-all;
+                @include mobile {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+    .bg-conts {
+        display:flex;
+        justify-content:center;
+        background:$disabled;
+        padding:50px 20px;
+        @include tablet {
+            justify-content:space-between;
+        }
+        @include mobile {
+            display:block;
+            padding:40px 16px;
+        }
+        .box {
+            width:30%;
+            max-width:320px;
+            margin-left:5%;
+            text-align:center;
+            @include tablet {
+                width:auto;
+                max-width:none;
+                margin-left:0;
+            }
+            @include mobile {
+                width:100%;
+                margin-top:20px;
+                &:first-child {
+                    margin-top:0;
+                }
+            }
+            &:first-child {
+                margin-left:0;
+            }
+            &::before {
+                content:' ';
+                display:block;
+                width:52px;
+                height:50px;
+                margin:0 auto;
+                @include bg;
+                @include mobile {
+                    width:40px;
+                    height:40px;
+                    background-size:auto 40px;
+                }
+            }
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i})::before {
+                    background-image:url('/images/icon/icon-sub0101-#{$i}.png');
+                }
+            }
+            p {
+                color:#888;
+                @include font-lg;
+                white-space:nowrap;
+                &.bold {
+                    font-weight:700;
+                }
+                &.num {
+                    margin-top:10px;
+                    color:#333;
+                    font-size:48px;
+                    line-height:1;
+                    font-weight:900;
+                    @include mobile {
+                        font-size:34px;
+                    }
+                }
+            }
+        }
+    }
+    .introduce {
+        padding-top:140px;
+        background:url('/images/img/img-sub0101.jpg') center 0 no-repeat;
+        @include tablet {
+            padding-top:60px;
+            background-size:1100px;
+        }
+        @include mobile {
+            padding-top:40px;
+            background:none;
+        }
+        .area {
+            @include contArea;
+            > * {
+                width:100%;
+                @include calcs(max-width, 830px, 1360px);
+                margin-left:auto;
+                @include mobile {
+                    max-width:none;
+                }
+            }
+            .tit {
+                font-size:30px;
+                line-height:36px;
+                font-weight:700;
+                word-break:keep-all;
+                @include mobile {
+                    font-size:24px;
+                    line-height:28px;
+                }
+            }
+            .desc {
+                margin-top:10px;
+                padding-right:15%;
+                @include font;
+                word-break:keep-all;
+            }
+            .years {
+                margin-top:40px;
+                @include mobile {
+                    margin-top:20px;
+                }
+                dl {
+                    @include clearfix;
+                    dt {
+                        float:left;
+                        width:100px;
+                        font-size:30px;
+                        font-weight:700;
+                    }
+                    dd {
+                        margin-bottom:10px;
+                        margin-left:100px;
+                        color:#666;
+                        @include font;
+                        span {
+                            font-weight:700;
+                            margin-right:10px;
+                        }
+                    }
+                }
+            }
+            .ci-lists-wrap {
+                margin-top:110px;
+                overflow:hidden;
+                @include tablet {
+                    max-width:none;
+                    margin-top:40px;
+                }
+                @include mobile {
+                    margin-top:20px;
+                }
+                ul.lists {
+                    display:flex;
+                    flex-wrap:wrap;
+                    margin:-40px 0 0 -50px;
+                    @include mobile {
+                        margin:-20px 0 0 -30px;
+                    }
+                    > li {
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        width:25%;
+                        padding-left:50px;
+                        margin-top:40px;
+                        @include mobile {
+                            margin-top:20px;
+                            padding-left:30px;
+                            width:33.3%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 인플스톡 가이드
+.sub0102 {
+    .box {
+        margin-top:70px;
+        @include mobile {
+            margin-top:30px;
+        }
+        &:first-child {
+            margin-top:0;
+        }
+        h3.tit {
+            margin-bottom:15px;
+            @include font-xl;
+            color:$point;
+            @include font-dh;
+            @include mobile {
+                margin-bottom:5px;
+            }
+        }
+        dl {
+            border:1px solid $border;
+            border-bottom:none;
+            &:last-child {
+                border-bottom:1px solid $border;
+            }
+            dt {
+                position:relative;
+                padding:15px 25px;
+                @include font-lg;
+                font-weight:500;
+                cursor:pointer;
+                @include mobile {
+                    padding:10px 16px;
+                }
+                &::after {
+                    content:' ';
+                    position:absolute;
+                    top:50%;
+                    right:28px;
+                    width:12px;
+                    height:12px;
+                    margin-top:-8px;
+                    border:3px solid #888;
+                    border-top:none;
+                    border-right:none;
+                    transform:rotate(-45deg);
+                    transition:all 0.2s ease-in-out;
+                    @include mobile {
+                        right:19px;
+                    }
+                }
+            }
+            &.open dt {
+                background:$disabled;
+                &::after {
+                    transform:rotate(135deg);
+                    margin-top:-3px;
+                }
+            }
+            dd {
+                display:none;
+                padding:45px 50px;
+                border-top:1px solid $border;
+                @include mobile {
+                    padding:20px;
+                }
+                > .bullet-list.small {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}
+
 // 상품상세
 .viewpage-wraps {
     > .head {
@@ -225,56 +565,15 @@
 
         }
         .prod-tabs {
-            position:relative;
             margin-bottom:60px;
             @include mobile {
                 margin:0 -16px 30px;
             }
-            &::before,
-            &::after {
-                content:' ';
-                position:absolute;
-                left:0;
-                right:0;
-                height:1px;
-                background:$border;
-                z-index:-1;
-            }
-            &::before {
-                top:0;
-            }
-            &::after {
-                bottom:0;
-            }
             ul.tabs {
-                position:relative;
-                font-size:0;
-                text-align:center;
                 li {
-                    display:inline-block;
-                    vertical-align:top;
-                    width:25%;
                     max-width:150px;
                     @include tablet {
                         max-width:none;
-                    }
-                    a {
-                        display:block;
-                        height:60px;
-                        font-size:18px;
-                        font-weight:500;
-                        line-height:60px;
-                        text-align:center;
-                        white-space:nowrap;
-                        @include mobile {
-                            height:45px;
-                            font-size:14px;
-                            line-height:45px;
-                        }
-                    }
-                    &.active a {
-                        background:$point;
-                        color:#fff;
                     }
                 }
             }
@@ -474,6 +773,381 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+// 인플루언서 페이지
+.infls-page-wrap {
+    @include clearfix;
+    .left {
+        float:left;
+        width:290px;
+        @include tablet {
+            display:flex;
+            float:none;
+            width:100%;
+        }
+        @include mobile {
+            display:block;
+        }
+        .box {
+            margin-bottom:10px;
+            padding:30px 20px;
+            border:1px solid $border;
+            @include tablet {
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                margin-bottom:0;
+                flex:1;
+                margin-left:20px;
+                &:first-child {
+                    margin-left:0;
+                }
+            }
+            @include mobile {
+                margin-left:0;
+                margin-bottom:10px;
+                padding:20px 16px;
+            }
+            .infls-info {
+                text-align:center;
+                @include mobile {
+                    position:relative;
+                    padding-left:70px;
+                    text-align:left;
+                    font-size:0;
+                }
+                .thumb {
+                    display:block;
+                    width:90px;
+                    height:90px;
+                    margin:0 auto 15px;
+                    border-radius:50%;
+                    @include bg;
+                    @include mobile {
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:60px;
+                        height:60px;
+                    }
+                }
+                .name {
+                    margin-bottom:20px;
+                    font-size:18px;
+                    font-weight:500;
+                    @include textEllipsis;
+                    @include mobile {
+                        font-size:16px;
+                        margin-bottom:10px;
+                    }
+                }
+                .btn {
+                    display:block;
+                    width:100%;
+                    max-width:180px;
+                    margin:5px auto 0;
+                    @include mobile {
+                        display:inline-block;
+                        vertical-align:top;
+                        width:calc((100% - 5px) / 2);
+                        margin-top:0;
+                        margin-right:5px;
+                        &:last-child {
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+            .tit {
+                font-size:18px;
+                font-weight:500;
+                text-align:center;
+                @include mobile {
+                    font-size:16px;
+                }
+            }
+            .lists {
+                margin-top:25px;
+                @include mobile {
+                    margin-top:15px;
+                }
+                li {
+                    display:flex;
+                    align-items:center;
+                    margin-top:10px;
+                    @include mobile {
+                        margin-top:5px;
+                    }
+                    &:nth-child(1) .flag {
+                        background:#2b78d2;
+                    }
+                    &:nth-child(2) .flag {
+                        background:#2564ad;
+                    }
+                    &:nth-child(3) .flag {
+                        background:#1e4f87;
+                    }
+                    &:nth-child(4) .flag {
+                        background:#173962;
+                    }
+                    &:nth-child(5) .flag {
+                        background:#0d2035;
+                    }
+                    .flag {
+                        width:70px;
+                        min-width:70px;
+                        height:28px;
+                        margin-right:10px;
+                        color:#fff;
+                        line-height:28px;
+                    }
+                    .thumb {
+                        display:block;
+                        width:35px;
+                        min-width:35px;
+                        height:35px;
+                        margin-right:10px;
+                        border-radius:50%;
+                        @include bg;
+                    }
+                    .name {
+                        display:inline-block;
+                        vertical-align:middle;
+                        color:#888;
+                        @include font-sm;
+                        @include textEllipsis;
+                    }
+                    &:first-child {
+                        margin-top:0;
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        margin-left:340px;
+        @include tablet {
+            margin-left:0;
+            margin-top:30px;
+        }
+        .top-bg {
+            position:relative;
+            margin-bottom:30px;
+            @include calcs(padding-top, 295px, 1020px);
+            @include bg;
+            @include mobile {
+                margin:0 -16px 30px;
+                height:200px;
+                padding-top:0;
+            }
+            ul.infos {
+                position:absolute;
+                left:0;
+                right:0;
+                bottom:0;
+                padding:10px 20px;
+                background:rgba(#000, 0.8);
+                font-size:0;
+                @include mobile {
+                    padding:6px 12px;
+                }
+                li {
+                    display:inline-block;
+                    vertical-align:top;
+                    margin-right:40px;
+                    @include mobile {
+                        display:block;
+                        margin-right:0;
+                        margin-bottom:5px;
+                    }
+                    &:last-child {
+                        margin-right:0;
+                        margin-bottom:0;
+                    }
+                    a {
+                        display:inline-block;
+                        vertical-align:top;
+                        &::before {
+                            content:' ';
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:30px;
+                            height:30px;
+                            @include bg;
+                        }
+                        @for $i from 1 through 7 {
+                            &.sns0#{$i}::before {
+                                background-image:url('/images/icon/icon-inflsns#{$i}.png');
+                            }
+                        }
+                        span {
+                            display:inline-block;
+                            vertical-align:middle;
+                            margin-left:10px;
+                            @include font-sm;
+                            font-weight:700;
+                            color:#fff;
+                            &.count {
+                                color:#ffe484;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include mobile {
+            .prod-tabs {
+                margin:0 -16px;
+            }
+        }
+        .tab-contents {
+            padding-top:50px;
+            @include mobile {
+                padding-top:30px;
+            }
+        }
+        // 대표 콘텐츠
+        .contents-slider {
+            margin-top:50px;
+            @include mobile {
+                margin-top:20px;
+            }
+            &:first-child {
+                margin-top:0;
+            }
+            .slider-title {
+                margin-bottom:20px;
+                padding-left:40px;
+                font-size:24px;
+                line-height:30px;
+                @include font-dh;
+                background-repeat:no-repeat;
+                background-position:0 0;
+                @for $i from 1 through 7 {
+                    &.sns0#{$i} {
+                        background-image:url('/images/icon/icon-inflsns#{$i}.png');
+                    }
+                }
+                @include mobile {
+                    margin-bottom:10px;
+                }
+            }
+            .swiper-slide {
+                a {
+                    display:block;
+                    width:100%;
+                    @include calcs(padding-top, 9px, 16px);
+                    @include bg;
+                }
+            }
+            .slide-controls {
+                margin-top:5px;
+                text-align:right;
+                font-size:0;
+                .btn-control {
+                    position:relative;
+                    display:inline-block;
+                    vertical-align:top;
+                    width:44px;
+                    height:44px;
+                    margin-left:1px;
+                    background:$disabled;
+                    color:#666;
+                    font-size:12px;
+                    line-height:60px;
+                    text-align:center;
+                    transition:$btn-transition;
+                    &:hover {
+                        background-color:shade-color($disabled, 10%);
+                    }
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:15px;
+                        left:50%;
+                        width:20px;
+                        height:1px;
+                        margin-left:-10px;
+                        background:#666;
+                    }
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        top:12px;
+                        left:50%;
+                        width:8px;
+                        height:1px;
+                        margin-left:-10px;
+                        background:#666;
+                    }
+                    &.prev {
+                        &::after {
+                            transform:rotate(-45deg);
+                        }
+                    }
+                    &.next {
+                        &::after {
+                            left:auto;
+                            right:50%;
+                            margin-left:0;
+                            margin-right:-10px;
+                            transform:rotate(45deg);
+                        }
+                    }
+                    &.swiper-button-disabled {
+                        opacity:0.5;
+                    }
+                }
+            }
+        }
+        // 공지사항
+        .talk-lists-wrap {
+            ul.lists {
+                > li {
+                    margin-top:30px;
+                    padding-bottom:30px;
+                    border-bottom:1px solid $border;
+                    @include mobile {
+                        margin-top:15px;
+                        padding-bottom:15px;
+                    }
+                    &:first-child {
+                        margin-top:0;
+                    }
+                }
+            }
+            .inner {
+                .by {
+                    margin-bottom:15px;
+                    font-size:0;
+                    .thumb {
+                        display:inline-block;
+                        vertical-align:middle;
+                        width:45px;
+                        height:45px;
+                        margin-right:10px;
+                        border-radius:50%;
+                        @include bg;
+                    }
+                    .name {
+                        display:inline-block;
+                        vertical-align:middle;
+                        @include font;
+                        font-weight:500;
+                    }
+                }
+                .desc {
+                    @include font;
+                }
+                .date {
+                    margin-top:15px;
+                    color:#888;
+                    @include font-sm;
                 }
             }
         }

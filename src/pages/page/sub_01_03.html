@@ -15,11 +15,15 @@
         <!-- contents -->
         <div id="container" class="contents">
             @@include('./layout/page-title.html', {
-                cate01 : '03',
-                title : '인플 소식(+언론보도)'
+                cate01 : '인플 소식(+언론보도)',
+                tab : '03'
             })
 
             <div class="contents-area">
+                @@include('./modules/news-list.html', {
+                    list : 8
+                })
+                @@include('./modules/pagination.html')
             </div>
         </div>
         <!-- // contents -->

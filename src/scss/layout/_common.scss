@@ -73,6 +73,10 @@
         }
         .contents-area {
             @include contArea;
+            &.full {
+                max-width:none;
+                padding:0;
+            }
         }
         .border-box {
             padding:30px 20px;

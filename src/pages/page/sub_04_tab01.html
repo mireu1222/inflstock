@@ -1,0 +1,71 @@
+<div class="contents-slider">
+    <p class="slider-title sns01">YOUTUBE</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+        </div>
+        <div class="slide-controls">
+            <button type="button" class="btn-control prev"><span>이전</span></button>
+            <button type="button" class="btn-control next"><span>다음</span></button>
+        </div>
+    </div>
+</div>
+<div class="contents-slider">
+    <p class="slider-title sns02">INSTAGRAM</p>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+            <div class="swiper-slide">
+                <a href="" style="background-image:url('/images/@thumb.jpg')"></a>
+            </div>
+        </div>
+        <div class="slide-controls">
+            <button type="button" class="btn-control prev"><span>이전</span></button>
+            <button type="button" class="btn-control next"><span>다음</span></button>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        const slider = new Swiper('.contents-slider .swiper-container', {
+            loop : false,
+            slidesPerView : 1,
+            spaceBetween : 10,
+            navigation : {
+                prevEl : '.slide-controls .btn-control.prev',
+                nextEl : '.slide-controls .btn-control.next',
+            },
+            breakpoints : {
+                1025 : {
+                    slidesPerView : 3,
+                    spaceBetween : 20
+                },
+                768 : {
+                    slidesPerView : 3,
+                    spaceBetween : 10,
+                }
+            }
+        });
+
+        uiTab();
+    });
+</script>

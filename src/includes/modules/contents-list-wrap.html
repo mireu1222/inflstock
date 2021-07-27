@@ -1,9 +1,9 @@
-<div class="contents-list-wrap@@if(context.type){ @@type}">
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
+@@if(context.type === 'listType'){
+    <div class="contents-list-wrap">
+        <ul class="lists">
             @@for(var i=0; i < list.length; i++){
                 <!-- loop -->
-                <div class="swiper-slide">
+                <li>
                     <a href="" class="inner">
                         @@if(!context.name2){
                             <div class="name">
@@ -36,10 +36,56 @@
                             <p class="price"><em>10,000</em>인플캐쉬</p>
                         }
                     </a>
-                </div>
+                </li>
                 <!-- // loop -->
             }
-        </div>
+        </ul>
     </div>
-    <div class="slider-paging"></div>
-</div>
+}
+@@if(context.type !== 'listType'){
+    <div class="contents-list-wrap">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @@for(var i=0; i < list.length; i++){
+                    <!-- loop -->
+                    <div class="swiper-slide">
+                        <a href="" class="inner">
+                            @@if(!context.name2){
+                                <div class="name">
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')" aria-hidden="true"></span>
+                                    <p>인플루언서이름</p>
+                                </div>
+                            }
+                            <span class="img" style="background-image:url('/images/@thumb.jpg')" aria-hidden="true"></span>
+                            @@if(context.title){
+                                <p class="tit">콘텐츠 제목이 들어감 콘텐츠 제목이 들어감 콘텐츠 제목이 들어감</p>
+                            }
+                            @@if(context.name2){
+                                <p class="name">인플루언서이름</p>
+                            }
+                            @@if(context.tag){
+                                <div class="tags">
+                                    <span>태그</span>
+                                    <span>태그</span>
+                                    <span>태그</span>
+                                </div>
+                            }
+                            @@if(context.count){
+                                <div class="count">
+                                    <span>99,999</span>
+                                    <span class="und `+list[i].und+`">100 (`+list[i].ud+`%)</span>
+                                </div>
+                                <p class="total">(1INS) 총 218만INS</p>
+                            }
+                            @@if(context.cashType){
+                                <p class="price"><em>10,000</em>인플캐쉬</p>
+                            }
+                        </a>
+                    </div>
+                    <!-- // loop -->
+                }
+            </div>
+        </div>
+        <div class="slider-paging"></div>
+    </div>
+}

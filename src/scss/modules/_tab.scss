@@ -231,3 +231,107 @@
         }
     }
 }
+
+.prod-tabs {
+    position:relative;
+    &::before,
+    &::after {
+        content:' ';
+        position:absolute;
+        left:0;
+        right:0;
+        height:1px;
+        background:$border;
+        z-index:-1;
+    }
+    &::before {
+        top:0;
+    }
+    &::after {
+        bottom:0;
+    }
+    ul.tabs {
+        position:relative;
+        font-size:0;
+        text-align:center;
+        li {
+            display:inline-block;
+            vertical-align:top;
+            width:25%;
+            a {
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:60px;
+                padding:0 5px;
+                font-size:18px;
+                font-weight:500;
+                line-height:20px;
+                text-align:center;
+                word-break:keep-all;
+                @include mobile {
+                    height:45px;
+                    font-size:14px;
+                    line-height:16px;
+                }
+            }
+            &.active a {
+                background:$point;
+                color:#fff;
+            }
+        }
+    }
+}
+
+.under-tabs {
+    position:absolute;
+    top:252px;
+    left:50%;
+    @include contArea;
+    transform:translateX(-50%);
+    overflow:hidden;
+    @include tablet {
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:translateX(0);
+        margin-bottom:30px;
+    }
+    ul.tabs {
+        @include pc {
+            width:100% !important;
+        }
+        text-align:right;
+        font-size:0;
+        white-space:nowrap;
+        @include tablet {
+            text-align:left;
+        }
+        li {
+            display:inline-block;
+            vertical-align:top;
+            margin-left:35px;
+            @include mobile {
+                margin-left:15px;
+            }
+            &:first-child {
+                margin-left:0;
+            }
+            a {
+                display:block;
+                padding-bottom:8px;
+                border-bottom:2px solid transparent;
+                font-size:18px;
+                font-weight:500;
+                @include mobile {
+                    font-size:16px;
+                }
+            }
+            &.active a {
+                color:$point;
+                font-weight:700;
+                border-color:$point;
+            }
+        }
+    }
+}

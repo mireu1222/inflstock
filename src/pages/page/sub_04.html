@@ -19,6 +19,67 @@
             })
 
             <div class="contents-area">
+                <div class="infls-page-wrap">
+                    <div class="left">
+                        <div class="box">
+                            <div class="infls-info">
+                                <span class="thumb" style="background-image:url('/images/@noimg.gif')"></span>
+                                <p class="name">인플루언서이름</p>
+                                <a href="" class="btn btn-sm btn-point2"><span>DM</span></a>
+                                <a href="" class="btn btn-sm btn-point"><span>INS 거래하기</span></a>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <p class="tit">INS 지분 TOP5</p>
+                            <ul class="lists">
+                                <li>
+                                    <span class="flag">대주주</span>
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                    <a href="" class="name">이름</a>
+                                </li>
+                                <li>
+                                    <span class="flag">2등 주주</span>
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                    <a href="" class="name">이름22</a>
+                                </li>
+                                <li>
+                                    <span class="flag">3등 주주</span>
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                    <a href="" class="name">이름333</a>
+                                </li>
+                                <li>
+                                    <span class="flag">4등 주주</span>
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                    <a href="" class="name">이름4444</a>
+                                </li>
+                                <li>
+                                    <span class="flag">5등 주주</span>
+                                    <span class="thumb" style="background-image:url('/images/@thumb2.jpg')"></span>
+                                    <a href="" class="name">이름55555이름이름이름이름</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="top-bg" style="background-image:url('/images/@bg.jpg')">
+                            <ul class="infos">
+                                <li><a href="" class="sns01"><span class="blind">인스타그램</span><span>pang2yo</span><span class="count">팔로워 1만</span></a></li>
+                                <li><a href="" class="sns02"><span class="blind">유튜브</span><span>팡이요</span><span class="count">구독자 43만</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="prod-tabs">
+                            <ul class="tabs">
+                                <li><a href="#n" data-tab="tab01">대표 콘텐츠</a></li>
+                                <li><a href="#n" data-tab="tab02">INFL'S TALK(공지사항)</a></li>
+                                <li><a href="#n" data-tab="tab03">판매중인 콘텐츠</a></li>
+                                <li><a href="#n" data-tab="tab04">오리지널 콘텐츠</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents">
+                            <!-- ajax contents area -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- // contents -->
@@ -31,5 +92,30 @@
         @@include('./layout/modal.html')
         <!-- // modal -->
     </div>
+
+    <script>
+        $(function(){
+            $('.infls-page-wrap .prod-tabs a').click(function() {
+                var activeTab = $(this).attr('data-tab');
+                var activeLi = $(this).closest('li');
+                var allLi = activeLi.siblings('li');
+
+                allLi.removeClass('active');
+                activeLi.addClass('active');
+                $.ajax({
+                    type : 'GET',
+                    url : 'sub_04_'+activeTab+'.html',
+                    dataType : "html",
+                    error : function() {
+                        alert('error');
+                    },
+                    success : function(data) {
+                        $('.infls-page-wrap .tab-contents').html(data);
+                    }
+                });
+            });
+            $('.infls-page-wrap .prod-tabs li:first-child a').click();
+        });
+    </script>
 </body>
 </html>
