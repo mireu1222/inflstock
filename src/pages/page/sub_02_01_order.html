@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+
+        <!-- contents -->
+        <div id="container" class="contents">
+            @@include('./layout/page-title.html', {
+                cate02 : '인플루언서 차트',
+                tab : '01',
+            })
+
+            <div class="contents-area">
+                <div class="infl-order-wrap">
+                    <!-- 상단 정보 -->
+                    <div class="product">
+                        <span class="thumb" aria-hidden="true">
+                            <img src="/images/@thumb2.jpg" alt="">
+                        </span>
+                        <div class="cont">
+                            <p class="tit">인플루언서 이름</p>
+                            <p class="desc">인플루언서 소개말이 들어감(안쓰면 삭제)</p>
+                            <div class="ins-info">
+                                <p class="title">총 INS 수</p>
+                                <ul>
+                                    <li>
+                                        <p class="tit">현재가</p>
+                                        <div class="cont">
+                                            <em class="cash">38,500 캐쉬</em>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="tit">전일비</p>
+                                        <div class="cont">
+                                            <span class="und up">500 (2.2%)</span>
+                                            <!-- <span class="und down">500 (-2.2%)</span> -->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 상단 정보 -->
+                    <!-- 하단 -->
+                    <div class="stock-content">
+                        <div class="view">
+                            <div class="prod-tabs type2">
+                                <ul class="tabs">
+                                    <li class="active"><a href="#n" data-tab="tab01">거래</a></li>
+                                    <li><a href="#n" data-tab="tab02">시세</a></li>
+                                    <li><a href="#n" data-tab="tab03">정보</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents">
+                                <!-- ajax contents area -->
+                            </div>
+                        </div>
+                        <div class="notice">
+                            <p>참여규정</p>
+                            <ul class="bullet-list">
+                                <li>INS 거래 수수료는 매수 및 매도 주문 금액의 1.5% 입니다.</li>
+                                <li>구매 체결 시 수수료를 포함한 금액이 현재 내가 보유한 인플캐쉬에서 자동으로 결제됩니다.</li>
+                                <li>판매 체결 시 수수료를 제외한 판매금액이 내가 보유한 인플캐쉬에서 자동으로 적용됩니다.</li>
+                                <li>매수주문금액 전체가 주문 대기금으로 편성되며, 주문을 취소하는 경우 해제됩니다.</li>
+                                <li>INS 거래 주문이 체결된 내용은 ‘My 인플스톡’에서 확인할 수 있습니다.</li>
+                                <li>거래 단위 당 판매차익이 5만원 이하일 경우,원천징수세액이 없습니다.(분리과세)</li>
+                                <li>INS 거래 결정은 온전하게 회원의 판단으로 이뤄졌으며, 인플스톡은 어떠한 경우에도 미래의 콘텐츠 저작권료나 저작권료 참여청구권의  거래에 대한 성사여부를 보장하거나 책임지지 않습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- // 하단 -->
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html', {
+            order : true,
+        })
+        <!-- // modal -->
+    </div>
+    <script>
+        $(function(){
+            $('.prod-tabs.type2 ul.tabs a').click(function(){
+                var activeTab = $(this).attr('data-tab');
+                var activeLi = $(this).closest('li');
+                var allLi = activeLi.siblings('li');
+
+                allLi.removeClass('active');
+                activeLi.addClass('active');
+                $.ajax({
+                    type : 'GET',
+                    url : 'sub_02_01_'+activeTab+'_ajax.html',
+                    dataType : "html",
+                    error : function() {
+                        alert('error');
+                    },
+                    success : function(data) {
+                        $('.stock-content .tab-contents').html(data);
+                    }
+                });
+            });
+            $('.prod-tabs.type2 ul.tabs > li:first-child a').click();
+        });
+    </script>
+</body>
+</html>

@@ -13,6 +13,11 @@
     overflow:hidden;
     z-index:1000;
     outline:0;
+    &.small {
+        .modal-wrap {
+            max-width:400px;
+        }
+    }
     .modal-wrap {
         display:flex;
         align-items:center;
@@ -179,6 +184,72 @@
                         line-height:16px;
                         color:$red;
                         text-align:center;
+                    }
+                }
+                .order-alert {
+                    section {
+                        border-bottom:1px solid $border;
+                        padding:25px 0;
+                        h2.tit {
+                            font-size:20px;
+                            font-weight:500;
+                        }
+                        .bullet-list {
+                            margin-top:10px;
+                        }
+                        .box {
+                            margin-top:20px;
+                            background:$disabled;
+                            padding:20px;
+                            p {
+                                margin-bottom:15px;
+                            }
+                            .chk-wrap {
+                                margin-top:5px;
+                            }
+                        }
+                        ul.infos {
+                            li {
+                                display:flex;
+                                margin-top:10px;
+                                &:first-child {
+                                    margin-top:0;
+                                }
+                                .tit {
+                                    font-size:16px;
+                                    margin-right:auto;
+                                }
+                                .cont {
+                                    font-size:16px;
+                                    font-weight:500;
+                                    text-align:right;
+                                    span.original {
+                                        display:block;
+                                        margin-bottom:7px;
+                                        color:#888;
+                                        font-size:15px;
+                                        font-weight:400;
+                                        text-decoration:line-through;
+                                    }
+                                    em {
+                                        display:inline-block;
+                                        vertical-align:top;
+                                        margin-left:20px;
+                                        color:$point;
+                                        &:first-child {
+                                            margin-left:0;
+                                        }
+                                    }
+                                }
+                            }
+                            &.cancel {
+                                li {
+                                    .cont em {
+                                        color:$red;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -175,3 +175,53 @@
         }
     }
 }
+
+/* tooltip */
+.tooltip-wrap {
+    position:relative;
+    display:inline-block;
+    vertical-align:top;
+    line-height:1;
+    z-index:10;
+    .tooltip {
+        display:inline-block;
+        vertical-align:top;
+        line-height:20px;
+        cursor:help;
+        &::after {
+            content:'?';
+            display:inline-block;
+            vertical-align:top;
+            width:20px;
+            height:20px;
+            margin-left:4px;
+            border:1px solid currentColor;
+            border-radius:50%;
+            color:currentColor;
+            line-height:18px;
+        }
+        &:hover {
+            + .tooltip-text {
+                display:block;
+            }
+        }
+    }
+    .tooltip-text {
+        display:none;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:200px;
+        margin-top:4px;
+        padding:12px;
+        border:1px solid $border;
+        border-radius:4px;
+        background:#fff;
+        white-space:initial;
+        font-size:14px;
+        line-height:20px;
+        color:#888;
+        text-align:left;
+        word-break:keep-all;
+    }
+}

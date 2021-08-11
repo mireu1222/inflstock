@@ -43,6 +43,15 @@
                 background:transparent;
                 font-size:16px;
                 line-height:30px;
+                &.ud::after {
+                    content:' ';
+                    display:inline-block;
+                    vertical-align:top;
+                    width:36px;
+                    height:30px;
+                    margin-left:8px;
+                    background:url('/images/icon/icon-ud-off.png') center no-repeat;
+                }
                 @include mobile {
                     padding:0 12px;
                     font-size:14px;
@@ -51,6 +60,9 @@
             &.active a {
                 color:$white;
                 background:$basic;
+                &.ud::after {
+                    background-image:url('/images/icon/icon-ud-on.png');
+                }
             }
         }
     }

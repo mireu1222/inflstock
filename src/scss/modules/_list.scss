@@ -674,8 +674,35 @@
     .inner {
         display:flex;
         align-items:center;
-        @include mobile {
+        @include tablet {
             flex-wrap:wrap;
+        }
+        .flw-count {
+            width:110px;
+            margin:0 15px;
+            font-weight:500;
+            @include tablet {
+                width:auto;
+                margin:0;
+                margin-right:20px;
+                text-align:center;
+            }
+            span {
+                display:inline-block;
+                vertical-align:top;
+                height:35px;
+                padding-left:45px;
+                background:url('/images/icon/icon-flw.png') 0 no-repeat;
+                font-size:18px;
+                line-height:35px;
+                @include mobile {
+                    height:26px;
+                    padding-left:32px;
+                    font-size:16px;
+                    line-height:26px;
+                    background-size:auto 26px;
+                }
+            }
         }
         .infl-info {
             position:relative;
@@ -685,11 +712,8 @@
             margin-right:auto;
             padding-left:120px;
             @include tablet {
-                width:auto;
                 min-height:80px;
                 padding-left:100px;
-            }
-            @include mobile {
                 width:100%;
             }
             .thumb {
@@ -733,15 +757,13 @@
             }
         }
         .dl-info {
-            width:180px;
+            width:150px;
             margin:0 15px;
             @include tablet {
+                flex:1;
                 width:auto;
-            }
-            @include mobile {
                 margin:0;
                 margin-top:20px;
-                width:50%;
             }
             dl {
                 text-align:center;
@@ -763,7 +785,7 @@
                     }
                 }
                 dd {
-                    margin-top:10px;
+                    margin-top:5px;
                     font-size:18px;
                     font-weight:900;
                     white-space:nowrap;
@@ -817,7 +839,19 @@
             }
             &.i {
                 dt::before {
-                    background:url('/images/icon/icon-i.png') center no-repeat;
+                    display:none;
+                }
+                dd {
+                    line-height:24px;
+                    &::after {
+                        content:' ';
+                        display:inline-block;
+                        vertical-align:middle;
+                        width:24px;
+                        height:24px;
+                        margin-left:4px;
+                        background:url('/images/icon/icon-c.png') center no-repeat;
+                    }
                 }
             }
             &.c {
@@ -829,15 +863,10 @@
         .btn.btn-point {
             width:160px;
             min-width:160px;
-            margin:0 30px;
+            margin:0 30px 0 15px;
             white-space:nowrap;
             @include tablet {
-                width:140px;
-                min-width:140px;
-                margin:0;
-                margin-left:15px;
-            }
-            @include mobile {
+                min-width:auto;
                 width:100%;
                 margin:0;
                 margin-top:20px;

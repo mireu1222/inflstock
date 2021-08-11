@@ -1,0 +1,76 @@
+<div class="order-conts type2">
+    <ul class="order-info-lists">
+        <li>
+            <div class="box">
+                <p class="tit">판매가격(1INS)</p>
+                <div class="inputs">
+                    <input type="text" value="000,000" readonly>
+                    <div class="btns">
+                        <button type="button" class="minus"><span class="blind">빼기</span></button>
+                        <button type="button" class="plus"><span class="blind">더하기</span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <p class="title">
+                <span>현재 수익률</span>
+                <span class="num">00.0%</span>
+            </p>
+            <div class="box">
+                <p class="tit">수량(INS)</p>
+                <div class="inputs">
+                    <input type="text" value="00" readonly>
+                    <div class="btns">
+                        <button type="button" class="minus"><span class="blind">빼기</span></button>
+                        <button type="button" class="plus"><span class="blind">더하기</span></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="slt-btns">
+                <li>
+                    <span class="rdo-btn-wrap">
+                        <input type="radio" id="slt01" name="slts">
+                        <label for="slt01">5INS</label>
+                    </span>
+                </li>
+                <li>
+                    <span class="rdo-btn-wrap">
+                        <input type="radio" id="slt02" name="slts">
+                        <label for="slt02">10INS</label>
+                    </span>
+                </li>
+                <li>
+                    <span class="rdo-btn-wrap">
+                        <input type="radio" id="slt03" name="slts">
+                        <label for="slt03">20INS</label>
+                    </span>
+                </li>
+                <li>
+                    <span class="rdo-btn-wrap">
+                        <input type="radio" id="slt04" name="slts">
+                        <label for="slt04">30INS</label>
+                    </span>
+                </li>
+                <li>
+                    <span class="rdo-btn-wrap">
+                        <input type="radio" id="slt05" name="slts">
+                        <label for="slt05">최대</label>
+                    </span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="total">
+        <p>주문금액</p>
+        <p class="num">000,000캐쉬</p>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-lg btn-basic" data-toggle="modal" data-target="#modal-order01"><span>매도주문</span></button>
+    </div>
+</div>
+<script>
+    $(function(){
+        modalToggle();
+    });
+</script>

@@ -1,0 +1,72 @@
+<div class="tbl-wrap">
+    <table class="table order-table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <span class="chk-wrap">
+                        <input type="checkbox" id="all" name="slt-order">
+                        <label for="all"><span class="blind">전체선택</span></label>
+                    </span>
+                </th>
+                <th scope="col">구분</th>
+                <th scope="col">가격</th>
+                <th scope="col">수량</th>
+                <th scope="col">
+                    <a href="" class="btn btn-sm btn-border"><span>주문취소</span></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="chk-wrap">
+                        <input type="checkbox" id="slt01" name="slt-order">
+                        <label for="slt01"><span class="blind">주문선택</span></label>
+                    </span>
+                </td>
+                <td class="text-red">매수</td>
+                <td>0,000</td>
+                <td>1INS</td>
+                <td>
+                    <a href="/page/sub_02_01_order03_2_ajax.html" class="btn btn-sm btn-point btn-detail"><span>정정</span></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="chk-wrap">
+                        <input type="checkbox" id="slt02" name="slt-order">
+                        <label for="slt02"><span class="blind">주문선택</span></label>
+                    </span>
+                </td>
+                <td class="text-point">매도</td>
+                <td>0,000</td>
+                <td>1INS</td>
+                <td>
+                    <a href="/page/sub_02_01_order03_3_ajax.html" class="btn btn-sm btn-point btn-detail"><span>정정</span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $(function(){
+        $('.btn-detail').click(function(e){
+            var btn = $(this);
+            var link = btn.attr('href');
+
+            e.preventDefault();
+
+            $.ajax({
+                type : 'GET',
+                url : link,
+                dataType : "html",
+                error : function() {
+                    alert('error');
+                },
+                success : function(data) {
+                    $('.order-tab-wrap .order-contents').html(data);
+                }
+            });
+        });
+    });
+</script>

@@ -83,3 +83,162 @@
     </article>
     <!-- // review -->
 }
+@@if(context.order){
+    <article id="modal-order01" class="modal" aria-hidden="true">
+        <div class="modal-wrap">
+            <div class="modal-container">
+                <div class="modal-body">
+                    <h1 class="tit">매도 주문 안내사항</h1>
+                    <div class="order-alert">
+                        <section>
+                            <h2 class="tit">매도</h2>
+                            <ul class="bullet-list">
+                                <li>거래 체결 시 수수료를 제외한 매도 금액이 현재 내가 보유한 인플캐쉬에 합산 됩니다.</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 class="tit">콘텐츠 권리 양도 및 정산</h2>
+                            <ul class="bullet-list">
+                                <li>판매 체결일 기준으로 권리가 변경됩니다.</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 class="tit">수수료</h2>
+                            <ul class="bullet-list">
+                                <li>구매 및 판매금액의 1INS당 1.2% (상한 1INS당 300캐쉬 / 소수점 이하 절사)</li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2 class="tit">세금</h2>
+                            <ul class="bullet-list">
+                                <li>매도 수익 5만원 초과 시 세금발생</li>
+                            </ul>
+                            <div class="box">
+                                <p>※ 판매 진행 경과 이메일 및 문자 안내</p>
+                                <div class="chk-wrap">
+                                    <input type="checkbox" id="popchk01" name="popchk01">
+                                    <label for="popchk01">매도 주문 안내사항을 확인하였고, 이에 동의함</label>
+                                </div>
+                                <div class="chk-wrap">
+                                    <input type="checkbox" id="popchk02" name="popchk02">
+                                    <label for="popchk02">이후 매도 주문 시 안내문 다시 보지 않기</label>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-md btn-gray" data-toggle="modal-close"><span>취소</span></button>
+                            <button type="button" class="btn btn-md btn-basic" data-toggle="modal" data-target="#modal-order02"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-toggle="modal-close"><span class="blind">팝업 닫기</span></button>
+            </div>
+        </div>
+    </article>
+    <article id="modal-order02" class="modal small" aria-hidden="true">
+        <div class="modal-wrap">
+            <div class="modal-container">
+                <div class="modal-body">
+                    <h1 class="tit">주문하시겠습니까? (매도)</h1>
+                    <div class="order-alert">
+                        <section>
+                            <h2 class="tit">인플루언서 이름</h2>
+                        </section>
+                        <section>
+                            <ul class="infos">
+                                <li>
+                                    <p class="tit">판매가격(1INS)</p>
+                                    <p class="cont"><em>0,000</em></p>
+                                </li>
+                                <li>
+                                    <p class="tit">수량</p>
+                                    <p class="cont"><em>0</em></p>
+                                </li>
+                                <li>
+                                    <p class="tit">예상 체결가격</p>
+                                    <p class="cont">0,000</p>
+                                </li>
+                            </ul>
+                        </section>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-md btn-gray"><span>아니요</span></button>
+                            <button type="button" class="btn btn-md btn-basic"><span>예</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-toggle="modal-close"><span class="blind">팝업 닫기</span></button>
+            </div>
+        </div>
+    </article>
+    <article id="modal-order03" class="modal small" aria-hidden="true">
+        <div class="modal-wrap">
+            <div class="modal-container">
+                <div class="modal-body">
+                    <h1 class="tit">정정하시겠습니까? (매도)</h1>
+                    <div class="order-alert">
+                        <section>
+                            <h2 class="tit">인플루언서 이름</h2>
+                        </section>
+                        <section>
+                            <ul class="infos">
+                                <li>
+                                    <p class="tit">판매가격(1INS)</p>
+                                    <p class="cont">
+                                        <span class="original"><span class="blind">정정 전 금액</span>0,000</span>
+                                        <em>0,000</em>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="tit">수량</p>
+                                    <p class="cont">
+                                        <span class="original"><span class="blind">정정 전 수량</span>00</span>
+                                        <em>0</em>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="tit">예상 체결가격</p>
+                                    <p class="cont">0,000</p>
+                                </li>
+                            </ul>
+                        </section>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-md btn-gray" data-toggle="modal-close"><span>아니요</span></button>
+                            <button type="button" class="btn btn-md btn-basic"><span>예</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-toggle="modal-close"><span class="blind">팝업 닫기</span></button>
+            </div>
+        </div>
+    </article>
+    <article id="modal-order04" class="modal small" aria-hidden="true">
+        <div class="modal-wrap">
+            <div class="modal-container">
+                <div class="modal-body">
+                    <h1 class="tit">정말로 취소하시겠습니까?</h1>
+                    <div class="order-alert">
+                        <section>
+                            <h2 class="tit">인플루언서 이름</h2>
+                        </section>
+                        <section>
+                            <ul class="infos cancel">
+                                <li>
+                                    <p class="tit">구매</p>
+                                    <p class="cont">
+                                        <em>0,000</em>
+                                        <em>0INS</em>
+                                    </p>
+                                </li>
+                            </ul>
+                        </section>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-md btn-gray" data-toggle="modal-close"><span>아니요</span></button>
+                            <button type="button" class="btn btn-md btn-basic"><span>예</span></button>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-toggle="modal-close"><span class="blind">팝업 닫기</span></button>
+            </div>
+        </div>
+    </article>
+}
